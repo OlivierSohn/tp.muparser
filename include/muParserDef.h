@@ -49,7 +49,7 @@
   This datatype must be a built in value type. You can not use custom classes.
   It should be working with all types except "int"!
 */
-#define MUP_BASETYPE double
+#define MUP_BASETYPE float
 
 /** \brief Activate this option in order to compile with OpenMP support. 
 
@@ -57,7 +57,7 @@
 */
 //#define MUP_USE_OPENMP
 
-#if defined(_UNICODE)
+#if 0/*defined(_UNICODE)*/
   /** \brief Definition of the basic parser string type. */
   #define MUP_STRING_TYPE std::wstring
 
@@ -104,7 +104,7 @@
 
 namespace mu
 {
-#if defined(_UNICODE)
+#if 0/*defined(_UNICODE)*/
 
   //------------------------------------------------------------------------------
   /** \brief Encapsulate wcout. */
