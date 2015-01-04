@@ -1,0 +1,16 @@
+#pragma once
+
+#include "muParser.h"
+#include "muParserBase.h"
+#include "muParserBytecode.h"
+#include "muParserCallback.h"
+#include "muParserDef.h"
+#include "muParserDLL.h"
+#include "muParserError.h"
+#include "muParserFixes.h"
+#include "muParserInt.h"
+#include "muParserStack.h"
+#include "muParserTemplateMagic.h"
+#include "muParserTest.h"
+#include "muParserToken.h"
+#include "muParserTokenReader.h"
