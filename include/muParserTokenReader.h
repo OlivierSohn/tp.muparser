@@ -76,6 +76,9 @@ namespace mu
       void ReInit();
       token_type ReadNextToken();
 
+      // needed to throw a well documented exception from var factory
+      void Error(const char * token) const;
+
   private:
 
       /** \brief Syntax codes. 

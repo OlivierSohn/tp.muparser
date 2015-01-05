@@ -29,6 +29,7 @@
 #include <string>
 #include <sstream>
 #include <map>
+#include <functional>
 
 #include "muParserFixes.h"
 
@@ -284,6 +285,7 @@ namespace mu
 
   /** \brief Callback type used for functions with a single arguments. */
   typedef value_type (*fun_type1)(value_type);
+  typedef std::function<value_type(value_type)> * generic_cppfun_type;
 
   /** \brief Callback type used for functions with two arguments. */
   typedef value_type (*fun_type2)(value_type, value_type);

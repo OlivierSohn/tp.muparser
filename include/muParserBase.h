@@ -79,9 +79,11 @@ private:
     /** \brief Type for a vector of strings. */
     typedef std::vector<string_type> stringbuf_type;
 
+public:
     /** \brief Typedef for the token reader. */
     typedef ParserTokenReader token_reader_type;
-    
+
+private:
     /** \brief Type used for parser tokens. */
     typedef ParserToken<value_type, string_type> token_type;
 
@@ -178,6 +180,8 @@ private:
                 int a_iPos = (int)mu::string_type::npos, 
                 const string_type &a_strTok = string_type() ) const;
 
+    // needed to throw well documented exceptions from var factory
+    const token_reader_type * TokenReader() const;
  protected:
 	  
     void Init();

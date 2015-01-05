@@ -32,9 +32,22 @@
 
 namespace mu
 {
+    ParserCallback::ParserCallback(generic_cppfun_type a_pCppFun, bool a_bAllowOpti, int a_iPrec, ECmdCode a_iCode )
+        :m_pFun(NULL)
+        , m_pCppFun(a_pCppFun)
+        , m_iArgc(1)
+        , m_iPri(a_iPrec)
+        , m_eOprtAsct(oaNONE)
+        , m_iCode(a_iCode)
+        , m_iType(tpDBL)
+        , m_bAllowOpti(a_bAllowOpti)
+    {}
+
+
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type0 a_pFun, bool a_bAllowOpti)
     :m_pFun((void*)a_pFun)
+    ,m_pCppFun(NULL)
     ,m_iArgc(0)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -46,6 +59,7 @@ namespace mu
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type1 a_pFun, bool a_bAllowOpti, int a_iPrec, ECmdCode a_iCode)
     :m_pFun((void*)a_pFun)
+    ,m_pCppFun(NULL)
     ,m_iArgc(1)
     ,m_iPri(a_iPrec)
     ,m_eOprtAsct(oaNONE)
@@ -61,6 +75,7 @@ namespace mu
   */
   ParserCallback::ParserCallback(fun_type2 a_pFun, bool a_bAllowOpti)
     :m_pFun((void*)a_pFun)
+    ,m_pCppFun(NULL)
     ,m_iArgc(2)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -81,7 +96,8 @@ namespace mu
                                  bool a_bAllowOpti, 
                                  int a_iPrec, 
                                  EOprtAssociativity a_eOprtAsct)
-    :m_pFun((void*)a_pFun)
+                                 :m_pFun((void*)a_pFun)
+                                 ,m_pCppFun(NULL)
     ,m_iArgc(2)
     ,m_iPri(a_iPrec)
     ,m_eOprtAsct(a_eOprtAsct)
@@ -92,7 +108,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type3 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(3)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -104,7 +121,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type4 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(4)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -116,7 +134,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type5 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(5)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -127,7 +146,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type6 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(6)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -138,7 +158,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type7 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(7)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -149,7 +170,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type8 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(8)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -160,7 +182,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type9 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(9)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -171,7 +194,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(fun_type10 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(10)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -182,7 +206,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type0 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(0)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -193,7 +218,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type1 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(1)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -208,7 +234,8 @@ namespace mu
       \throw nothrow
   */
   ParserCallback::ParserCallback(bulkfun_type2 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(2)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -219,7 +246,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type3 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(3)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -231,7 +259,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type4 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(4)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -243,7 +272,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type5 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(5)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -254,7 +284,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type6 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(6)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -265,7 +296,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type7 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(7)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -276,7 +308,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type8 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(8)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -287,7 +320,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type9 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(9)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -298,7 +332,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(bulkfun_type10 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(10)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -310,7 +345,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(multfun_type a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(-1)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -322,7 +358,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(strfun_type1 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(0)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -334,7 +371,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(strfun_type2 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(1)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -346,7 +384,8 @@ namespace mu
 
   //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(strfun_type3 a_pFun, bool a_bAllowOpti)
-    :m_pFun((void*)a_pFun)
+      :m_pFun((void*)a_pFun)
+      ,m_pCppFun(NULL)
     ,m_iArgc(2)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -361,7 +400,8 @@ namespace mu
       \throw nothrow
   */
   ParserCallback::ParserCallback()
-    :m_pFun(0)
+      :m_pFun(0)
+      ,m_pCppFun(NULL)
     ,m_iArgc(0)
     ,m_iPri(-1)
     ,m_eOprtAsct(oaNONE)
@@ -378,6 +418,7 @@ namespace mu
   ParserCallback::ParserCallback(const ParserCallback &ref)
   {
     m_pFun       = ref.m_pFun;
+    m_pCppFun    = ref.m_pCppFun;
     m_iArgc      = ref.m_iArgc;
     m_bAllowOpti = ref.m_bAllowOpti;
     m_iCode      = ref.m_iCode;
@@ -413,9 +454,13 @@ namespace mu
       \throw nothrow
       \return #pFun
   */
-  void* ParserCallback::GetAddr() const 
-  { 
-    return m_pFun;  
+  void* ParserCallback::GetAddr() const
+  {
+      return m_pFun;
+  }
+  generic_cppfun_type ParserCallback::GetCppAddr() const
+  {
+      return m_pCppFun;
   }
 
   //---------------------------------------------------------------------------

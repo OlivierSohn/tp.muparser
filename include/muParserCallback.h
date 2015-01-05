@@ -27,6 +27,7 @@
 #define MU_PARSER_CALLBACK_H
 
 #include "muParserDef.h"
+#include <functional>
 
 /** \file
     \brief Definition of the parser callback class.
@@ -50,6 +51,8 @@ namespace mu
 class ParserCallback
 {
 public:
+    ParserCallback(generic_cppfun_type object, bool a_bAllowOpti, int a_iPrec = -1, ECmdCode a_iCode = cmFUNC);
+
     ParserCallback(fun_type0  a_pFun, bool a_bAllowOpti);
     ParserCallback(fun_type1  a_pFun, bool a_bAllowOpti, int a_iPrec = -1, ECmdCode a_iCode=cmFUNC);
     ParserCallback(fun_type2  a_pFun, bool a_bAllowOpti, int a_iPrec, EOprtAssociativity a_eAssociativity);
@@ -86,6 +89,7 @@ public:
 
     bool  IsOptimizable() const;
     void* GetAddr() const;
+    generic_cppfun_type GetCppAddr() const;
     ECmdCode  GetCode() const;
     ETypeCode GetType() const;
     int GetPri()  const;
@@ -94,7 +98,7 @@ public:
 
 private:
     void *m_pFun;                   ///< Pointer to the callback function, casted to void
-    
+    generic_cppfun_type m_pCppFun;
     /** \brief Number of numeric function arguments
     
         This number is negative for functions with variable number of arguments. in this cases

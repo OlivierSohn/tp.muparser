@@ -29,6 +29,7 @@
 #include <string>
 #include <stack>
 #include <vector>
+#include <functional>
 
 #include "muParserDef.h"
 #include "muParserError.h"
@@ -62,6 +63,8 @@ namespace mu
         //       pointer due to constraints in the ANSI standard which allows
         //       data pointers and function pointers to differ in size.
         generic_fun_type ptr;
+        // field added to support c++11 std::<function> and allow for object's method call
+        generic_cppfun_type cppptr;
         int   argc;
         int   idx;
       } Fun;
@@ -119,6 +122,7 @@ public:
     void AddOp(ECmdCode a_Oprt);
     void AddIfElse(ECmdCode a_Oprt);
     void AddAssignOp(value_type *a_pVar);
+    void AddMet(generic_cppfun_type a_pCppFun, int a_iArgc);
     void AddFun(generic_fun_type a_pFun, int a_iArgc);
     void AddBulkFun(generic_fun_type a_pFun, int a_iArgc);
     void AddStrFun(generic_fun_type a_pFun, int a_iArgc, int a_iIdx);

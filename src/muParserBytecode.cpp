@@ -360,12 +360,12 @@ namespace mu
   {
     if (a_iArgc>=0)
     {
-      m_iStackPos = m_iStackPos - a_iArgc + 1; 
+      m_iStackPos = m_iStackPos - a_iArgc + 1;
     }
     else
     {
       // function with unlimited number of arguments
-      m_iStackPos = m_iStackPos + a_iArgc + 1; 
+      m_iStackPos = m_iStackPos + a_iArgc + 1;
     }
     m_iMaxStackSize = std::max(m_iMaxStackSize, (size_t)m_iStackPos);
 
@@ -373,6 +373,27 @@ namespace mu
     tok.Cmd = cmFUNC;
     tok.Fun.argc = a_iArgc;
     tok.Fun.ptr = a_pFun;
+    tok.Fun.cppptr = NULL;
+    m_vRPN.push_back(tok);
+  }
+  void ParserByteCode::AddMet(generic_cppfun_type a_pCppFun, int a_iArgc)
+  {
+    if (a_iArgc>=0)
+    {
+      m_iStackPos = m_iStackPos - a_iArgc + 1;
+    }
+    else
+    {
+      // function with unlimited number of arguments
+      m_iStackPos = m_iStackPos + a_iArgc + 1;
+    }
+    m_iMaxStackSize = std::max(m_iMaxStackSize, (size_t)m_iStackPos);
+
+    SToken tok;
+    tok.Cmd = cmFUNC;
+    tok.Fun.argc = a_iArgc;
+    tok.Fun.ptr = NULL;
+    tok.Fun.cppptr = a_pCppFun;
     m_vRPN.push_back(tok);
   }
 

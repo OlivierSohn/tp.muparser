@@ -166,7 +166,7 @@ namespace mu
       /** \brief Set Callback type. */
       ParserToken& Set(const ParserCallback &a_pCallback, const TString &a_sTok)
       {
-        assert(a_pCallback.GetAddr());
+        assert(a_pCallback.GetAddr() || a_pCallback.GetCppAddr());
 
         m_iCode = a_pCallback.GetCode();
         m_iType = tpVOID;
@@ -336,6 +336,10 @@ namespace mu
       {
         return (m_pCallback.get()) ? (generic_fun_type)m_pCallback->GetAddr() : 0;
       }
+      generic_cppfun_type GetCppFuncAddr() const
+      {
+        return (m_pCallback.get()) ? m_pCallback->GetCppAddr() : 0;
+      }
 
       //------------------------------------------------------------------------------
       /** \biref Get value of the token.
@@ -376,7 +380,7 @@ namespace mu
       {
         assert(m_pCallback.get());
 
-        if (!m_pCallback->GetAddr())
+        if (!m_pCallback->GetAddr() && !m_pCallback->GetCppAddr())
 	        throw ParserError(ecINTERNAL_ERROR);
 
         return m_pCallback->GetArgc();

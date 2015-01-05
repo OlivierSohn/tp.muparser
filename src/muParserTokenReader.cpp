@@ -954,5 +954,10 @@ namespace mu
   {
     return m_cArgSep;
   }
+
+  void ParserTokenReader::Error(const char * token) const
+  {
+      Error(ecUNASSIGNABLE_TOKEN, m_iPos, token);
+  }
 } // namespace mu
 

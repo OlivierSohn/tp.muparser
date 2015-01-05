@@ -338,7 +338,7 @@ namespace mu
                                 funmap_type &a_Storage,
                                 const char_type *a_szCharSet )
   {
-    if (a_Callback.GetAddr()==0)
+    if (!a_Callback.GetAddr() && !a_Callback.GetCppAddr())
         Error(ecINVALID_FUN_PTR);
 
     const funmap_type *pFunMap = &a_Storage;
@@ -795,11 +795,11 @@ namespace mu
     assert(m_pTokenReader.get());
 
     // Operator stack empty or does not contain tokens with callback functions
-    if (a_stOpt.empty() || a_stOpt.top().GetFuncAddr()==0 )
+    if (a_stOpt.empty() || (a_stOpt.top().GetFuncAddr() == 0 && a_stOpt.top().GetCppFuncAddr() == 0))
       return;
 
     token_type funTok = a_stOpt.pop();
-    assert(funTok.GetFuncAddr());
+    assert(funTok.GetFuncAddr() || funTok.GetCppFuncAddr());
 
     // Binary operators must rely on their internal operator number
     // since counting of operators relies on commas for function arguments
@@ -857,7 +857,10 @@ namespace mu
           if (funTok.GetArgCount()==-1 && iArgCount==0)
             Error(ecTOO_FEW_PARAMS, m_pTokenReader->GetPos(), funTok.GetAsString());
 
-          m_vRPN.AddFun(funTok.GetFuncAddr(), (funTok.GetArgCount()==-1) ? -iArgNumerical : iArgNumerical);
+          if (funTok.GetFuncAddr())
+              m_vRPN.AddFun(funTok.GetFuncAddr(), (funTok.GetArgCount()==-1) ? -iArgNumerical : iArgNumerical);
+          else
+              m_vRPN.AddMet(funTok.GetCppFuncAddr(), (funTok.GetArgCount() == -1) ? -iArgNumerical : iArgNumerical);
           break;
     }
 
@@ -1098,7 +1101,13 @@ namespace mu
               switch(iArgCount)  
               {
               case 0: sidx += 1; Stack[sidx] = (*(fun_type0)pTok->Fun.ptr)(); continue;
-              case 1:            Stack[sidx] = (*(fun_type1)pTok->Fun.ptr)(Stack[sidx]);   continue;
+              case 1:
+                  if (pTok->Fun.ptr)
+                      Stack[sidx] = (*(fun_type1)pTok->Fun.ptr)(Stack[sidx]);
+                  else
+                      Stack[sidx] = (*(pTok->Fun.cppptr))(Stack[sidx]);
+                  continue;
+
               case 2: sidx -= 1; Stack[sidx] = (*(fun_type2)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1]); continue;
               case 3: sidx -= 2; Stack[sidx] = (*(fun_type3)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]); continue;
               case 4: sidx -= 3; Stack[sidx] = (*(fun_type4)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]); continue;
@@ -1270,7 +1279,7 @@ namespace mu
                     if (stOpt.size() && 
                         stOpt.top().GetCode()!=cmOPRT_INFIX && 
                         stOpt.top().GetCode()!=cmOPRT_BIN && 
-                        stOpt.top().GetFuncAddr()!=0)
+                        (stOpt.top().GetFuncAddr() != 0 || stOpt.top().GetCppFuncAddr() != 0))
                     {
                       ApplyFunc(stOpt, stVal, iArgCount);
                     }
@@ -1775,4 +1784,10 @@ namespace mu
 #endif
 
   }
+
+  const ParserBase::token_reader_type * ParserBase::TokenReader() const
+  {
+      return m_pTokenReader.get();
+  }
+
 } // namespace mu
