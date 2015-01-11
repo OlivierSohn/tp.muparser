@@ -47,7 +47,7 @@ enum EErrorCodes
 {
   // Formula syntax errors
   ecUNEXPECTED_OPERATOR    = 0,  ///< Unexpected binary operator found
-  ecUNASSIGNABLE_TOKEN     = 1,  ///< Token cant be identified.
+  ecUNASSIGNABLE_TOKEN     = 1,  ///< Token cant be identified. can be translated by resolve to ecMISSING_FUNCTIONCALL if the token corresponds to an animation session name
   ecUNEXPECTED_EOF         = 2,  ///< Unexpected end of formula. (Example: "2+sin(")
   ecUNEXPECTED_ARG_SEP     = 3,  ///< An unexpected comma has been found. (Example: "1,23")
   ecUNEXPECTED_ARG         = 4,  ///< An unexpected argument has been found
@@ -91,7 +91,10 @@ enum EErrorCodes
 
   // internal errors
   ecINTERNAL_ERROR         = 36, ///< Internal error of any kind.
-  
+
+  // my custom errors
+  ecMISSING_FUNCTIONCALL = 37,///< the resolve process found an animation with token as session name, but the parser could not interpret it as a function call in the expression because () are missing
+
   // The last two are special entries 
   ecCOUNT,                      ///< This is no error code, It just stores just the total number of error codes
   ecUNDEFINED              = -1  ///< Undefined message, placeholder to detect unassigned error messages
@@ -160,6 +163,7 @@ public:
     int GetPos() const;
     const string_type& GetToken() const;
     EErrorCodes GetCode() const;
+    void ChangeCode(EErrorCodes);
 
 private:
     string_type m_strMsg;     ///< The message string

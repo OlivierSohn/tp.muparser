@@ -101,7 +101,8 @@ namespace mu
     m_vErrMsg[ecMISSING_ELSE_CLAUSE]    = _T("If-then-else operator is missing an else clause");
     m_vErrMsg[ecMISPLACED_COLON]        = _T("Misplaced colon at position $POS$");
     m_vErrMsg[ecUNREASONABLE_NUMBER_OF_COMPUTATIONS] = _T("Number of computations to small for bulk mode. (Vectorisation overhead too costly)");
-    
+    m_vErrMsg[ecMISSING_FUNCTIONCALL]  = _T("Missing function call for function \"$TOK$\" at position $POS$");
+
     #if defined(_DEBUG)
       for (int i=0; i<ecCOUNT; ++i)
         if (!m_vErrMsg[i].length())
@@ -332,6 +333,12 @@ namespace mu
   /** \brief Return the error code. */
   EErrorCodes ParserError::GetCode() const
   {
-    return m_iErrc;
+      return m_iErrc;
+  }
+  //------------------------------------------------------------------------------
+  /** \brief Return the error code. */
+  void ParserError::ChangeCode(EErrorCodes code)
+  {
+      m_iErrc = code;
   }
 } // namespace mu
