@@ -137,7 +137,7 @@ private:
                            const string_type &strFind,
                            const string_type &strReplaceWith);
     void Reset();
-
+    void UpdateMessage();
 public:
 
     ParserError();
