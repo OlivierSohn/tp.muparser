@@ -101,7 +101,9 @@ namespace mu
     m_vErrMsg[ecMISSING_ELSE_CLAUSE]    = _T("If-then-else operator is missing an else clause");
     m_vErrMsg[ecMISPLACED_COLON]        = _T("Misplaced colon at position $POS$");
     m_vErrMsg[ecUNREASONABLE_NUMBER_OF_COMPUTATIONS] = _T("Number of computations to small for bulk mode. (Vectorisation overhead too costly)");
-    m_vErrMsg[ecMISSING_FUNCTIONCALL]  = _T("Missing function call for \"$TOK$\" at position $POS$");
+    m_vErrMsg[ecMISSING_FUNCTIONCALL] = _T("Missing function call for \"$TOK$\" at position $POS$");
+    m_vErrMsg[ecFORBIDDEN_VAR] = _T("Var \"$TOK$\" not allowed in this formula");
+    m_vErrMsg[ecRECURSIVITY] = _T("Recursivity induced by \"$TOK$\" at position $POS$");
 
     #if defined(_DEBUG)
       for (int i=0; i<ecCOUNT; ++i)

@@ -94,6 +94,8 @@ enum EErrorCodes
 
   // my custom errors
   ecMISSING_FUNCTIONCALL = 37,///< the resolve process found an animation with token as session name, but the parser could not interpret it as a function call in the expression because () are missing
+  ecFORBIDDEN_VAR = 38,
+  ecRECURSIVITY = 39,
 
   // The last two are special entries 
   ecCOUNT,                      ///< This is no error code, It just stores just the total number of error codes
