@@ -40,7 +40,7 @@
     <ClInclude Include="include\muParserTest.h" />
     <ClInclude Include="include\muParserToken.h" />
     <ClInclude Include="include\muParserTokenReader.h" />
-    <ClInclude Include="src\tp.muparser.allincludes.h" />
+    <ClInclude Include="include\tp.muparser.allincludes.h" />
     <ClInclude Include="src\win32\stdafx.h" />
     <ClInclude Include="src\win32\targetver.h" />
   </ItemGroup>

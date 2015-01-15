@@ -5,11 +5,29 @@
 
 #pragma once
 
-#include "targetver.h"
+// STL
+#include <vector>
+#include <locale>
+#include <map>
+#include <deque>
+#include <string>
+#include <sstream>
+#include <cassert>
+#include <stdexcept>
+#include <cmath>
+#include <cstdio>
+#include <cstring>
+#include <numeric>
+#include <iostream>
+#include <memory>
+#include <limits.h>
+#include <stack>
+#include <functional>
+#include <algorithm>
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+#ifdef MUP_USE_OPENMP
+#include <omp.h>
+#endif
 
-
-
-// TODO: reference additional headers your program requires here
-#include "../tp.muparser.allincludes.h"
+// this module
+#include "tp.muparser.allincludes.h"

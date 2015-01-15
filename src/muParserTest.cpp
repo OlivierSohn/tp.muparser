@@ -1214,10 +1214,10 @@ namespace mu
         p.DefineVar( _T("a"), &var);
         p.SetExpr(a_str);
 
-        var = a_fVar1;
+        var = (value_type) a_fVar1;
         fVal[0] = p.Eval();
 
-        var = a_fVar2;
+        var = (value_type) a_fVar2;
         fVal[1] = p.Eval();
         
         if ( fabs(a_fRes1-fVal[0]) > 0.0000000001)
@@ -1548,5 +1548,32 @@ namespace mu
       while (!getchar());
       exit(-1);
     }
+
+    value_type ParserTester::FirstArg(const value_type* a_afArg, int a_iArgc)
+    {
+        if (!a_iArgc)
+            throw mu::Parser::exception_type(_T("too few arguments for function FirstArg."));
+
+        return  a_afArg[0];
+    }
+
+    value_type ParserTester::LastArg(const value_type* a_afArg, int a_iArgc)
+    {
+        if (!a_iArgc)
+            throw mu::Parser::exception_type(_T("too few arguments for function LastArg."));
+
+        return  a_afArg[a_iArgc - 1];
+    }
+
+    value_type ParserTester::Sum(const value_type* a_afArg, int a_iArgc)
+    {
+        if (!a_iArgc)
+            throw mu::Parser::exception_type(_T("too few arguments for function sum."));
+
+        value_type fRes = 0;
+        for (int i = 0; i<a_iArgc; ++i) fRes += a_afArg[i];
+        return fRes;
+    }
+
   } // namespace test
 } // namespace mu

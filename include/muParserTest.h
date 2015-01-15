@@ -80,34 +80,12 @@ namespace mu
         static value_type sqr(value_type v1) { return v1*v1; }
         static value_type sign(value_type v) { return -v; }
         static value_type add(value_type v1, value_type v2) { return v1+v2; }
-        static value_type land(value_type v1, value_type v2) { return (int)v1 & (int)v2; }
+        static value_type land(value_type v1, value_type v2) { return (value_type)((int)v1 & (int)v2); }
         
 
-        static value_type FirstArg(const value_type* a_afArg, int a_iArgc)
-        {
-          if (!a_iArgc)	
-            throw mu::Parser::exception_type( _T("too few arguments for function FirstArg.") );
-
-          return  a_afArg[0];
-        }
-
-        static value_type LastArg(const value_type* a_afArg, int a_iArgc)
-        {
-          if (!a_iArgc)	
-            throw mu::Parser::exception_type( _T("too few arguments for function LastArg.") );
-
-          return  a_afArg[a_iArgc-1];
-        }
-
-        static value_type Sum(const value_type* a_afArg, int a_iArgc)
-        { 
-          if (!a_iArgc)	
-            throw mu::Parser::exception_type( _T("too few arguments for function sum.") );
-
-          value_type fRes=0;
-          for (int i=0; i<a_iArgc; ++i) fRes += a_afArg[i];
-          return fRes;
-        }
+        static value_type FirstArg(const value_type* a_afArg, int a_iArgc);
+        static value_type LastArg(const value_type* a_afArg, int a_iArgc);
+        static value_type Sum(const value_type* a_afArg, int a_iArgc);
 
         static value_type Rnd(value_type v)
         {

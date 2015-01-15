@@ -98,7 +98,7 @@
     <ClInclude Include="include\muParserTokenReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\tp.muparser.allincludes.h">
+    <ClInclude Include="include\tp.muparser.allincludes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
