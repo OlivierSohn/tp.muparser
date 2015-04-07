@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09429CD11AD38299001513DA /* muParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DD1AD358BD0099DA54 /* muParser.cpp */; };
+		09429CD21AD38299001513DA /* muParserBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DE1AD358BD0099DA54 /* muParserBase.cpp */; };
+		09429CD31AD38299001513DA /* muParserBytecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */; };
+		09429CD41AD38299001513DA /* muParserCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E01AD358BD0099DA54 /* muParserCallback.cpp */; };
+		09429CD51AD38299001513DA /* muParserDLL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E11AD358BD0099DA54 /* muParserDLL.cpp */; };
+		09429CD61AD38299001513DA /* muParserError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E21AD358BD0099DA54 /* muParserError.cpp */; };
+		09429CD71AD38299001513DA /* muParserInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E31AD358BD0099DA54 /* muParserInt.cpp */; };
+		09429CD81AD38299001513DA /* muParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E41AD358BD0099DA54 /* muParserTest.cpp */; };
+		09429CD91AD38299001513DA /* muParserTokenReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */; };
+		097662EA1AD358BD0099DA54 /* muParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662CD1AD358BD0099DA54 /* muParser.h */; };
+		097662EB1AD358BD0099DA54 /* muParserBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662CE1AD358BD0099DA54 /* muParserBase.h */; };
+		097662EC1AD358BD0099DA54 /* muParserBytecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662CF1AD358BD0099DA54 /* muParserBytecode.h */; };
+		097662ED1AD358BD0099DA54 /* muParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D01AD358BD0099DA54 /* muParserCallback.h */; };
+		097662EE1AD358BD0099DA54 /* muParserDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D11AD358BD0099DA54 /* muParserDef.h */; };
+		097662EF1AD358BD0099DA54 /* muParserDLL.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D21AD358BD0099DA54 /* muParserDLL.h */; };
+		097662F01AD358BD0099DA54 /* muParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D31AD358BD0099DA54 /* muParserError.h */; };
+		097662F11AD358BD0099DA54 /* muParserFixes.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D41AD358BD0099DA54 /* muParserFixes.h */; };
+		097662F21AD358BD0099DA54 /* muParserInt.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D51AD358BD0099DA54 /* muParserInt.h */; };
+		097662F31AD358BD0099DA54 /* muParserStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D61AD358BD0099DA54 /* muParserStack.h */; };
+		097662F41AD358BD0099DA54 /* muParserTemplateMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D71AD358BD0099DA54 /* muParserTemplateMagic.h */; };
+		097662F51AD358BD0099DA54 /* muParserTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D81AD358BD0099DA54 /* muParserTest.h */; };
+		097662F61AD358BD0099DA54 /* muParserToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D91AD358BD0099DA54 /* muParserToken.h */; };
+		097662F71AD358BD0099DA54 /* muParserTokenReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662DA1AD358BD0099DA54 /* muParserTokenReader.h */; };
+		097662F81AD358BD0099DA54 /* tp.muparser.allincludes.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662DB1AD358BD0099DA54 /* tp.muparser.allincludes.h */; };
+		097662F91AD358BD0099DA54 /* muParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DD1AD358BD0099DA54 /* muParser.cpp */; };
+		097662FA1AD358BD0099DA54 /* muParserBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DE1AD358BD0099DA54 /* muParserBase.cpp */; };
+		097662FB1AD358BD0099DA54 /* muParserBytecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */; };
+		097662FC1AD358BD0099DA54 /* muParserCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E01AD358BD0099DA54 /* muParserCallback.cpp */; };
+		097662FD1AD358BD0099DA54 /* muParserDLL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E11AD358BD0099DA54 /* muParserDLL.cpp */; };
+		097662FE1AD358BD0099DA54 /* muParserError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E21AD358BD0099DA54 /* muParserError.cpp */; };
+		097662FF1AD358BD0099DA54 /* muParserInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E31AD358BD0099DA54 /* muParserInt.cpp */; };
+		097663001AD358BD0099DA54 /* muParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E41AD358BD0099DA54 /* muParserTest.cpp */; };
+		097663011AD358BD0099DA54 /* muParserTokenReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09429CB81AD3827D001513DA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09429CBA1AD3827D001513DA /* libtp.muparser.ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtp.muparser.ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		097662851AD3563B0099DA54 /* libtp.muparser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtp.muparser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		097662CD1AD358BD0099DA54 /* muParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParser.h; sourceTree = "<group>"; };
+		097662CE1AD358BD0099DA54 /* muParserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserBase.h; sourceTree = "<group>"; };
+		097662CF1AD358BD0099DA54 /* muParserBytecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserBytecode.h; sourceTree = "<group>"; };
+		097662D01AD358BD0099DA54 /* muParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserCallback.h; sourceTree = "<group>"; };
+		097662D11AD358BD0099DA54 /* muParserDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserDef.h; sourceTree = "<group>"; };
+		097662D21AD358BD0099DA54 /* muParserDLL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserDLL.h; sourceTree = "<group>"; };
+		097662D31AD358BD0099DA54 /* muParserError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserError.h; sourceTree = "<group>"; };
+		097662D41AD358BD0099DA54 /* muParserFixes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserFixes.h; sourceTree = "<group>"; };
+		097662D51AD358BD0099DA54 /* muParserInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserInt.h; sourceTree = "<group>"; };
+		097662D61AD358BD0099DA54 /* muParserStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserStack.h; sourceTree = "<group>"; };
+		097662D71AD358BD0099DA54 /* muParserTemplateMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserTemplateMagic.h; sourceTree = "<group>"; };
+		097662D81AD358BD0099DA54 /* muParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserTest.h; sourceTree = "<group>"; };
+		097662D91AD358BD0099DA54 /* muParserToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserToken.h; sourceTree = "<group>"; };
+		097662DA1AD358BD0099DA54 /* muParserTokenReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserTokenReader.h; sourceTree = "<group>"; };
+		097662DB1AD358BD0099DA54 /* tp.muparser.allincludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tp.muparser.allincludes.h; sourceTree = "<group>"; };
+		097662DD1AD358BD0099DA54 /* muParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParser.cpp; sourceTree = "<group>"; };
+		097662DE1AD358BD0099DA54 /* muParserBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserBase.cpp; sourceTree = "<group>"; };
+		097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserBytecode.cpp; sourceTree = "<group>"; };
+		097662E01AD358BD0099DA54 /* muParserCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserCallback.cpp; sourceTree = "<group>"; };
+		097662E11AD358BD0099DA54 /* muParserDLL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserDLL.cpp; sourceTree = "<group>"; };
+		097662E21AD358BD0099DA54 /* muParserError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserError.cpp; sourceTree = "<group>"; };
+		097662E31AD358BD0099DA54 /* muParserInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserInt.cpp; sourceTree = "<group>"; };
+		097662E41AD358BD0099DA54 /* muParserTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserTest.cpp; sourceTree = "<group>"; };
+		097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserTokenReader.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09429CB71AD3827D001513DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097662821AD3563B0099DA54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0976627C1AD3563B0099DA54 = {
+			isa = PBXGroup;
+			children = (
+				097662CC1AD358BD0099DA54 /* include */,
+				097662DC1AD358BD0099DA54 /* src */,
+				097662861AD3563B0099DA54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		097662861AD3563B0099DA54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				097662851AD3563B0099DA54 /* libtp.muparser.a */,
+				09429CBA1AD3827D001513DA /* libtp.muparser.ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		097662CC1AD358BD0099DA54 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				097662CD1AD358BD0099DA54 /* muParser.h */,
+				097662CE1AD358BD0099DA54 /* muParserBase.h */,
+				097662CF1AD358BD0099DA54 /* muParserBytecode.h */,
+				097662D01AD358BD0099DA54 /* muParserCallback.h */,
+				097662D11AD358BD0099DA54 /* muParserDef.h */,
+				097662D21AD358BD0099DA54 /* muParserDLL.h */,
+				097662D31AD358BD0099DA54 /* muParserError.h */,
+				097662D41AD358BD0099DA54 /* muParserFixes.h */,
+				097662D51AD358BD0099DA54 /* muParserInt.h */,
+				097662D61AD358BD0099DA54 /* muParserStack.h */,
+				097662D71AD358BD0099DA54 /* muParserTemplateMagic.h */,
+				097662D81AD358BD0099DA54 /* muParserTest.h */,
+				097662D91AD358BD0099DA54 /* muParserToken.h */,
+				097662DA1AD358BD0099DA54 /* muParserTokenReader.h */,
+				097662DB1AD358BD0099DA54 /* tp.muparser.allincludes.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		097662DC1AD358BD0099DA54 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				097662DD1AD358BD0099DA54 /* muParser.cpp */,
+				097662DE1AD358BD0099DA54 /* muParserBase.cpp */,
+				097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */,
+				097662E01AD358BD0099DA54 /* muParserCallback.cpp */,
+				097662E11AD358BD0099DA54 /* muParserDLL.cpp */,
+				097662E21AD358BD0099DA54 /* muParserError.cpp */,
+				097662E31AD358BD0099DA54 /* muParserInt.cpp */,
+				097662E41AD358BD0099DA54 /* muParserTest.cpp */,
+				097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		097662831AD3563B0099DA54 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097662ED1AD358BD0099DA54 /* muParserCallback.h in Headers */,
+				097662F21AD358BD0099DA54 /* muParserInt.h in Headers */,
+				097662F01AD358BD0099DA54 /* muParserError.h in Headers */,
+				097662F61AD358BD0099DA54 /* muParserToken.h in Headers */,
+				097662F71AD358BD0099DA54 /* muParserTokenReader.h in Headers */,
+				097662EB1AD358BD0099DA54 /* muParserBase.h in Headers */,
+				097662F31AD358BD0099DA54 /* muParserStack.h in Headers */,
+				097662F11AD358BD0099DA54 /* muParserFixes.h in Headers */,
+				097662EE1AD358BD0099DA54 /* muParserDef.h in Headers */,
+				097662F41AD358BD0099DA54 /* muParserTemplateMagic.h in Headers */,
+				097662EA1AD358BD0099DA54 /* muParser.h in Headers */,
+				097662F81AD358BD0099DA54 /* tp.muparser.allincludes.h in Headers */,
+				097662EF1AD358BD0099DA54 /* muParserDLL.h in Headers */,
+				097662EC1AD358BD0099DA54 /* muParserBytecode.h in Headers */,
+				097662F51AD358BD0099DA54 /* muParserTest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		09429CB91AD3827D001513DA /* tp.muparser.ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09429CCB1AD3827D001513DA /* Build configuration list for PBXNativeTarget "tp.muparser.ios" */;
+			buildPhases = (
+				09429CB61AD3827D001513DA /* Sources */,
+				09429CB71AD3827D001513DA /* Frameworks */,
+				09429CB81AD3827D001513DA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tp.muparser.ios;
+			productName = tp.muparser.ios;
+			productReference = 09429CBA1AD3827D001513DA /* libtp.muparser.ios.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		097662841AD3563B0099DA54 /* tp.muparser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 097662891AD3563B0099DA54 /* Build configuration list for PBXNativeTarget "tp.muparser" */;
+			buildPhases = (
+				097662811AD3563B0099DA54 /* Sources */,
+				097662821AD3563B0099DA54 /* Frameworks */,
+				097662831AD3563B0099DA54 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tp.muparser;
+			productName = tp.muparser;
+			productReference = 097662851AD3563B0099DA54 /* libtp.muparser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0976627D1AD3563B0099DA54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Olivier;
+				TargetAttributes = {
+					09429CB91AD3827D001513DA = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					097662841AD3563B0099DA54 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 097662801AD3563B0099DA54 /* Build configuration list for PBXProject "tp.muparser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0976627C1AD3563B0099DA54;
+			productRefGroup = 097662861AD3563B0099DA54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				097662841AD3563B0099DA54 /* tp.muparser */,
+				09429CB91AD3827D001513DA /* tp.muparser.ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09429CB61AD3827D001513DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09429CD11AD38299001513DA /* muParser.cpp in Sources */,
+				09429CD21AD38299001513DA /* muParserBase.cpp in Sources */,
+				09429CD31AD38299001513DA /* muParserBytecode.cpp in Sources */,
+				09429CD41AD38299001513DA /* muParserCallback.cpp in Sources */,
+				09429CD51AD38299001513DA /* muParserDLL.cpp in Sources */,
+				09429CD61AD38299001513DA /* muParserError.cpp in Sources */,
+				09429CD71AD38299001513DA /* muParserInt.cpp in Sources */,
+				09429CD81AD38299001513DA /* muParserTest.cpp in Sources */,
+				09429CD91AD38299001513DA /* muParserTokenReader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		097662811AD3563B0099DA54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097663001AD358BD0099DA54 /* muParserTest.cpp in Sources */,
+				097662F91AD358BD0099DA54 /* muParser.cpp in Sources */,
+				097662FC1AD358BD0099DA54 /* muParserCallback.cpp in Sources */,
+				097662FA1AD358BD0099DA54 /* muParserBase.cpp in Sources */,
+				097662FF1AD358BD0099DA54 /* muParserInt.cpp in Sources */,
+				097662FB1AD358BD0099DA54 /* muParserBytecode.cpp in Sources */,
+				097662FD1AD358BD0099DA54 /* muParserDLL.cpp in Sources */,
+				097662FE1AD358BD0099DA54 /* muParserError.cpp in Sources */,
+				097663011AD358BD0099DA54 /* muParserTokenReader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		09429CCC1AD3827D001513DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		09429CCD1AD3827D001513DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		097662871AD3563B0099DA54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		097662881AD3563B0099DA54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0976628A1AD3563B0099DA54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0976628B1AD3563B0099DA54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09429CCB1AD3827D001513DA /* Build configuration list for PBXNativeTarget "tp.muparser.ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09429CCC1AD3827D001513DA /* Debug */,
+				09429CCD1AD3827D001513DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		097662801AD3563B0099DA54 /* Build configuration list for PBXProject "tp.muparser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				097662871AD3563B0099DA54 /* Debug */,
+				097662881AD3563B0099DA54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		097662891AD3563B0099DA54 /* Build configuration list for PBXNativeTarget "tp.muparser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0976628A1AD3563B0099DA54 /* Debug */,
+				0976628B1AD3563B0099DA54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0976627D1AD3563B0099DA54 /* Project object */;
+}
