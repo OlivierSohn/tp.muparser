@@ -225,7 +225,7 @@
 		0976627D1AD3563B0099DA54 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Olivier;
 				TargetAttributes = {
 					09429CB91AD3827D001513DA = {
@@ -395,6 +395,7 @@
 		0976628A1AD3563B0099DA54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -403,6 +404,7 @@
 		0976628B1AD3563B0099DA54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +420,7 @@
 				09429CCD1AD3827D001513DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		097662801AD3563B0099DA54 /* Build configuration list for PBXProject "tp.muparser" */ = {
 			isa = XCConfigurationList;
