@@ -357,7 +357,17 @@ namespace mu
       Error(ecNAME_CONFLICT, -1, a_strName);
 
     CheckOprt(a_strName, a_Callback, a_szCharSet);
-    a_Storage[a_strName] = a_Callback;
+      
+      string_type strLowerCaseName,strUpperCaseName;
+      strUpperCaseName.resize(a_strName.size());
+      strLowerCaseName.resize(a_strName.size());
+      
+      std::transform(a_strName.begin(), a_strName.end(), strUpperCaseName.begin(), ::toupper);
+      std::transform(a_strName.begin(), a_strName.end(), strLowerCaseName.begin(), ::tolower);
+      a_Storage[strLowerCaseName] = a_Callback;
+      if(strLowerCaseName != strUpperCaseName)
+          a_Storage[strUpperCaseName] = a_Callback;
+      
     ReInit();
   }
 
@@ -615,7 +625,17 @@ namespace mu
   void ParserBase::DefineConst(const string_type &a_sName, value_type a_fVal)
   {
     CheckName(a_sName, ValidNameChars());
-    m_ConstDef[a_sName] = a_fVal;
+      
+      string_type strLowerCaseName,strUpperCaseName;
+      strUpperCaseName.resize(a_sName.size());
+      strLowerCaseName.resize(a_sName.size());
+      
+      std::transform(a_sName.begin(), a_sName.end(), strUpperCaseName.begin(), ::toupper);
+      std::transform(a_sName.begin(), a_sName.end(), strLowerCaseName.begin(), ::tolower);
+      m_ConstDef[strLowerCaseName] = a_fVal;
+      if(strLowerCaseName != strUpperCaseName)
+          m_ConstDef[strUpperCaseName] = a_fVal;
+
     ReInit();
   }
 
