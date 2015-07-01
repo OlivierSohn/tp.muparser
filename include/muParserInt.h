@@ -128,10 +128,10 @@ private:
 public:
     ParserInt();
 
-    virtual void InitFun();
-    virtual void InitOprt();
-    virtual void InitConst();
-    virtual void InitCharSets();
+    void InitFun() override;
+    void InitOprt() override;
+    void InitConst() override;
+    void InitCharSets() override;
 };
 
 } // namespace mu
