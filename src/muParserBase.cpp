@@ -1116,33 +1116,84 @@ namespace mu
       case  cmFUNC:
             {
               int iArgCount = pTok->Fun.argc;
-
+                generic_fun_type cFunc = pTok->Fun.ptr;
+                
               // switch according to argument count
               switch(iArgCount)  
-              {
-              case 0: sidx += 1; Stack[sidx] = (*(fun_type0)pTok->Fun.ptr)(); continue;
-              case 1:
-                  if (pTok->Fun.ptr)
-                      Stack[sidx] = (*(fun_type1)pTok->Fun.ptr)(Stack[sidx]);
-                  else
-                      Stack[sidx] = (*(pTok->Fun.cppptr))(Stack[sidx]);
-                  continue;
-
-              case 2: sidx -= 1; Stack[sidx] = (*(fun_type2)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1]); continue;
-              case 3: sidx -= 2; Stack[sidx] = (*(fun_type3)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]); continue;
-              case 4: sidx -= 3; Stack[sidx] = (*(fun_type4)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]); continue;
-              case 5: sidx -= 4; Stack[sidx] = (*(fun_type5)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]); continue;
-              case 6: sidx -= 5; Stack[sidx] = (*(fun_type6)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]); continue;
-              case 7: sidx -= 6; Stack[sidx] = (*(fun_type7)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]); continue;
-              case 8: sidx -= 7; Stack[sidx] = (*(fun_type8)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]); continue;
-              case 9: sidx -= 8; Stack[sidx] = (*(fun_type9)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]); continue;
-              case 10:sidx -= 9; Stack[sidx] = (*(fun_type10)pTok->Fun.ptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]); continue;
-              default:
+                {
+                    case 0: sidx += 1;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type0)cFunc)();
+                        else
+                            Stack[sidx] = (*(cppfun_type0)pTok->Fun.cppptr)();
+                        continue;
+                    case 1:
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type1)cFunc)(Stack[sidx]);
+                        else
+                            Stack[sidx] = (*(cppfun_type1)pTok->Fun.cppptr)(Stack[sidx]);
+                        continue;
+                        
+                    case 2: sidx -= 1;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type2)cFunc)(Stack[sidx], Stack[sidx+1]);
+                        else
+                            Stack[sidx] = (*(cppfun_type2)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1]);
+                        continue;
+                    case 3: sidx -= 2;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type3)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]);
+                        else
+                            Stack[sidx] = (*(cppfun_type3)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]);
+                        continue;
+                    case 4: sidx -= 3;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type4)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]);
+                        else
+                            Stack[sidx] = (*(cppfun_type4)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]);
+                        continue;
+                    case 5: sidx -= 4;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type5)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]);
+                        else
+                            Stack[sidx] = (*(cppfun_type5)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]);
+                        continue;
+                    case 6: sidx -= 5;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type6)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
+                        else
+                            Stack[sidx] = (*(cppfun_type6)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
+                        continue;
+                    case 7: sidx -= 6;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type7)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
+                        else
+                            Stack[sidx] = (*(cppfun_type7)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
+                        continue;
+                    case 8: sidx -= 7;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type8)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]);
+                        else
+                            Stack[sidx] = (*(cppfun_type8)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]);
+                        continue;
+                    case 9: sidx -= 8;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type9)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]);
+                        else
+                            Stack[sidx] = (*(cppfun_type9)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]);
+                        continue;
+                    case 10:sidx -= 9;
+                        if (cFunc)
+                            Stack[sidx] = (*(fun_type10)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]);
+                        else
+                            Stack[sidx] = (*(cppfun_type10)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]);
+                        continue;
+                    default:
                 if (iArgCount>0) // function with variable arguments store the number as a negative value
                   Error(ecINTERNAL_ERROR, 1);
 
                 sidx -= -iArgCount - 1;
-                Stack[sidx] =(*(multfun_type)pTok->Fun.ptr)(&Stack[sidx], -iArgCount);
+                Stack[sidx] =(*(multfun_type)cFunc)(&Stack[sidx], -iArgCount);
                 continue;
               }
             }

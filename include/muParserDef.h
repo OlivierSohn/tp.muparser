@@ -279,40 +279,51 @@ namespace mu
   
   /** \brief Callback type used for functions without arguments. */
   typedef value_type (*generic_fun_type)();
+    typedef void * generic_cppfun_type;
 
   /** \brief Callback type used for functions without arguments. */
   typedef value_type (*fun_type0)();
+    typedef std::function<value_type()> * cppfun_type0;
 
   /** \brief Callback type used for functions with a single arguments. */
   typedef value_type (*fun_type1)(value_type);
-  typedef std::function<value_type(value_type)> * generic_cppfun_type;
+    typedef std::function<value_type(value_type)> * cppfun_type1;
 
   /** \brief Callback type used for functions with two arguments. */
   typedef value_type (*fun_type2)(value_type, value_type);
+    typedef std::function<value_type(value_type,value_type)> * cppfun_type2;
 
   /** \brief Callback type used for functions with three arguments. */
   typedef value_type (*fun_type3)(value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type)> * cppfun_type3;
 
   /** \brief Callback type used for functions with four arguments. */
   typedef value_type (*fun_type4)(value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type)> * cppfun_type4;
 
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type5)(value_type, value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type,value_type)> * cppfun_type5;
 
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type6)(value_type, value_type, value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type,value_type,value_type)> * cppfun_type6;
 
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type7)(value_type, value_type, value_type, value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type,value_type,value_type,value_type)> * cppfun_type7;
 
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type8)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type,value_type,value_type,value_type,value_type)> * cppfun_type8;
 
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type9)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type,value_type,value_type,value_type,value_type,value_type)> * cppfun_type9;
 
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type10)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type);
+    typedef std::function<value_type(value_type,value_type,value_type,value_type,value_type,value_type,value_type,value_type,value_type,value_type)> * cppfun_type10;
 
   /** \brief Callback type used for functions without arguments. */
   typedef value_type (*bulkfun_type0)(int, int);

@@ -51,7 +51,17 @@ namespace mu
 class ParserCallback
 {
 public:
-    ParserCallback(generic_cppfun_type object, bool a_bAllowOpti, int a_iPrec = -1, ECmdCode a_iCode = cmFUNC);
+    ParserCallback(cppfun_type0 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type1 object, bool a_bAllowOpti, int a_iPrec = -1, ECmdCode a_iCode = cmFUNC);
+    ParserCallback(cppfun_type2 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type3 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type4 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type5 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type6 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type7 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type8 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type9 object, bool a_bAllowOpti);
+    ParserCallback(cppfun_type10 object, bool a_bAllowOpti);
 
     ParserCallback(fun_type0  a_pFun, bool a_bAllowOpti);
     ParserCallback(fun_type1  a_pFun, bool a_bAllowOpti, int a_iPrec = -1, ECmdCode a_iCode=cmFUNC);
