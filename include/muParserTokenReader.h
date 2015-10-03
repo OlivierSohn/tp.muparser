@@ -76,9 +76,11 @@ namespace mu
       void ReInit();
       token_type ReadNextToken();
 
-      // needed to throw a well documented exception from var factory
+      // I added that to throw a well documented exception from var factory
       void Error(const char * token) const;
 
+      // I added that to know what function name was before an "unexpected parenthesis" error
+      const string_type & GetLastToken(int & iLastPos) const;
   private:
 
       /** \brief Syntax codes. 
@@ -155,6 +157,7 @@ namespace mu
       value_type m_fZero;      ///< Dummy value of zero, referenced by undefined variables
       int m_iBrackets;
       token_type m_lastTok;
+      int  m_iLastPos;
       char_type m_cArgSep;     ///< The character used for separating function arguments
   };
 } // namespace mu

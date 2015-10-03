@@ -99,6 +99,7 @@ namespace mu
     m_cArgSep         = a_Reader.m_cArgSep;
 	m_fZero           = a_Reader.m_fZero;
 	m_lastTok         = a_Reader.m_lastTok;
+    m_iLastPos        = a_Reader.m_iLastPos;
   }
 
   //---------------------------------------------------------------------------
@@ -130,6 +131,7 @@ namespace mu
     ,m_fZero(0)
     ,m_iBrackets(0)
     ,m_lastTok()
+    ,m_iLastPos(-1)
     ,m_cArgSep(',')
   {
     assert(m_pParser);
@@ -249,6 +251,7 @@ namespace mu
     m_iBrackets = 0;
     m_UsedVar.clear();
     m_lastTok = token_type();
+    m_iLastPos = -1;
   }
 
   //---------------------------------------------------------------------------
@@ -465,6 +468,7 @@ namespace mu
               Error(ecINTERNAL_ERROR);
         } // switch operator id
 
+        m_iLastPos = m_iPos;
         m_iPos += (int)len;
         a_Tok.Set( (ECmdCode)i, pOprtDef[i] );
         return true;
@@ -490,6 +494,8 @@ namespace mu
         Error(ecUNEXPECTED_ARG_SEP, m_iPos, szSep);
 
       m_iSynFlags  = noBC | noOPT | noEND | noARG_SEP | noPOSTOP | noASSIGN;
+    
+      m_iLastPos = m_iPos;
       m_iPos++;
       a_Tok.Set(cmARG_SEP, szSep);
       return true;
@@ -546,6 +552,7 @@ namespace mu
         continue;
 
       a_Tok.Set(it->second, it->first);
+      m_iLastPos = m_iPos;
       m_iPos += (int)it->first.length();
 
       if (m_iSynFlags & noINFIXOP) 
@@ -559,6 +566,7 @@ namespace mu
 
 /*
     a_Tok.Set(item->second, sTok);
+    m_iLastPos = m_iPos;
     m_iPos = (int)iEnd;
 
     if (m_iSynFlags & noINFIXOP) 
@@ -594,6 +602,7 @@ namespace mu
 
     a_Tok.Set(item->second, strTok);
 
+    m_iLastPos = m_iPos;
     m_iPos = (int)iEnd;
     if (m_iSynFlags & noFUN)
       Error(ecUNEXPECTED_FUN, m_iPos-(int)a_Tok.GetAsString().length(), a_Tok.GetAsString());
@@ -655,7 +664,8 @@ namespace mu
           }
 
         }
-
+          
+        m_iLastPos = m_iPos;
         m_iPos += (int)sID.length();
         m_iSynFlags  = noBC | noOPT | noARG_SEP | noPOSTOP | noEND | noASSIGN;
         return true;
@@ -702,6 +712,7 @@ namespace mu
         continue;
 
       a_Tok.Set(it->second, sTok);
+      m_iLastPos = m_iPos;
   	  m_iPos += (int)it->first.length();
 
       m_iSynFlags = noVAL | noVAR | noFUN | noBO | noPOSTOP | noSTR | noASSIGN;
@@ -736,6 +747,7 @@ namespace mu
       valmap_type::const_iterator item = m_pConstDef->find(strTok);
       if (item!=m_pConstDef->end())
       {
+        m_iLastPos = m_iPos;
         m_iPos = iEnd;
         a_Tok.SetVal(item->second, strTok);
 
@@ -794,6 +806,7 @@ namespace mu
 
     m_pParser->OnDetectVar(&m_strFormula, m_iPos, iEnd);
 
+    m_iLastPos = m_iPos;
     m_iPos = iEnd;
     a_Tok.SetVar(item->second, strTok);
     m_UsedVar[item->first] = item->second;  // Add variable to used-var-list
@@ -823,6 +836,7 @@ namespace mu
     if (m_iSynFlags & noSTR)
       Error(ecUNEXPECTED_VAR, m_iPos, strTok);
 
+    m_iLastPos = m_iPos;
     m_iPos = iEnd;
     if (!m_pParser->m_vStringVarBuf.size())
       Error(ecINTERNAL_ERROR);
@@ -878,6 +892,7 @@ namespace mu
       m_UsedVar[strTok] = 0;  // Add variable to used-var-list
     }
 
+    m_iLastPos = m_iPos;
     m_iPos = iEnd;
 
     // Call the variable factory in order to let it define a new parser variable
@@ -920,6 +935,7 @@ namespace mu
 		m_pParser->m_vStringBuf.push_back(strTok); // Store string in internal buffer
     a_Tok.SetString(strTok, m_pParser->m_vStringBuf.size());
 
+    m_iLastPos = m_iPos;
     m_iPos += (int)strTok.length() + 2 + (int)iSkip;  // +2 wg Anführungszeichen; +iSkip für entfernte escape zeichen
     m_iSynFlags = noANY ^ ( noARG_SEP | noBC | noOPT | noEND );
 
@@ -959,5 +975,12 @@ namespace mu
   {
       Error(ecUNASSIGNABLE_TOKEN, m_iPos, token);
   }
+    
+  const string_type & ParserTokenReader::GetLastToken(int & iLastPos) const
+  {
+      iLastPos = m_iLastPos;
+      return m_lastTok.GetAsString();
+  }
+    
 } // namespace mu
 

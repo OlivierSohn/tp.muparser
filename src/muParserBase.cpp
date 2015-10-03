@@ -1787,7 +1787,7 @@ namespace mu
   */
   value_type ParserBase::Eval() const
   {
-    return (this->*m_pParseFormula)(); 
+    return (this->*m_pParseFormula)();
   }
 
   //---------------------------------------------------------------------------
