@@ -136,6 +136,7 @@ namespace mu
   {
     assert(m_pParser);
     SetParent(m_pParser);
+      m_vIdentFun.reserve(6);
   }
     
   //---------------------------------------------------------------------------
@@ -170,7 +171,7 @@ namespace mu
     // the rest impossible.
     // reference:
     // http://sourceforge.net/projects/muparser/forums/forum/462843/topic/4824956
-    m_vIdentFun.push_front(a_pCallback);
+    m_vIdentFun.insert(m_vIdentFun.begin(),a_pCallback);
   }
 
   //---------------------------------------------------------------------------
@@ -761,7 +762,7 @@ namespace mu
 
     // 3.call the value recognition functions provided by the user
     // Call user defined value recognition functions
-    std::list<identfun_type>::const_iterator item = m_vIdentFun.begin();
+    std::vector<identfun_type>::const_iterator item = m_vIdentFun.begin();
     for (item = m_vIdentFun.begin(); item!=m_vIdentFun.end(); ++item)
     {
       int iStart = m_iPos;

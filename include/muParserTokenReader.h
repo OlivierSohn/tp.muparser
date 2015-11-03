@@ -152,7 +152,7 @@ namespace mu
       varmap_type *m_pVarDef;  ///< The only non const pointer to parser internals
       facfun_type m_pFactory;
       void *m_pFactoryData;
-      std::list<identfun_type> m_vIdentFun; ///< Value token identification function
+      std::vector<identfun_type> m_vIdentFun; ///< Value token identification function
       varmap_type m_UsedVar;
       value_type m_fZero;      ///< Dummy value of zero, referenced by undefined variables
       int m_iBrackets;
