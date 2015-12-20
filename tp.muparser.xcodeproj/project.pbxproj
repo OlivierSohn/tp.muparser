@@ -81,6 +81,15 @@
 		097662E31AD358BD0099DA54 /* muParserInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserInt.cpp; sourceTree = "<group>"; };
 		097662E41AD358BD0099DA54 /* muParserTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserTest.cpp; sourceTree = "<group>"; };
 		097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = muParserTokenReader.cpp; sourceTree = "<group>"; };
+		09C84A801C271E1D002CF5B7 /* Project.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.Debug.xcconfig; sourceTree = "<group>"; };
+		09C84A811C271E1D002CF5B7 /* Project.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.Release.xcconfig; sourceTree = "<group>"; };
+		09C84A821C271E1D002CF5B7 /* Project.Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.Shared.xcconfig; sourceTree = "<group>"; };
+		09C84A831C271E1D002CF5B7 /* tp.muparser.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tp.muparser.Debug.xcconfig; sourceTree = "<group>"; };
+		09C84A841C271E1D002CF5B7 /* tp.muparser.ios.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tp.muparser.ios.Debug.xcconfig; sourceTree = "<group>"; };
+		09C84A851C271E1D002CF5B7 /* tp.muparser.ios.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tp.muparser.ios.Release.xcconfig; sourceTree = "<group>"; };
+		09C84A861C271E1D002CF5B7 /* tp.muparser.ios.Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tp.muparser.ios.Shared.xcconfig; sourceTree = "<group>"; };
+		09C84A871C271E1D002CF5B7 /* tp.muparser.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tp.muparser.Release.xcconfig; sourceTree = "<group>"; };
+		09C84A881C271E1D002CF5B7 /* tp.muparser.Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tp.muparser.Shared.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,7 @@
 		0976627C1AD3563B0099DA54 = {
 			isa = PBXGroup;
 			children = (
+				09C84A7F1C271E1D002CF5B7 /* xcode.config */,
 				097662CC1AD358BD0099DA54 /* include */,
 				097662DC1AD358BD0099DA54 /* src */,
 				097662861AD3563B0099DA54 /* Products */,
@@ -155,6 +165,22 @@
 				097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		09C84A7F1C271E1D002CF5B7 /* xcode.config */ = {
+			isa = PBXGroup;
+			children = (
+				09C84A801C271E1D002CF5B7 /* Project.Debug.xcconfig */,
+				09C84A811C271E1D002CF5B7 /* Project.Release.xcconfig */,
+				09C84A821C271E1D002CF5B7 /* Project.Shared.xcconfig */,
+				09C84A831C271E1D002CF5B7 /* tp.muparser.Debug.xcconfig */,
+				09C84A841C271E1D002CF5B7 /* tp.muparser.ios.Debug.xcconfig */,
+				09C84A851C271E1D002CF5B7 /* tp.muparser.ios.Release.xcconfig */,
+				09C84A861C271E1D002CF5B7 /* tp.muparser.ios.Shared.xcconfig */,
+				09C84A871C271E1D002CF5B7 /* tp.muparser.Release.xcconfig */,
+				09C84A881C271E1D002CF5B7 /* tp.muparser.Shared.xcconfig */,
+			);
+			path = xcode.config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,121 +318,43 @@
 /* Begin XCBuildConfiguration section */
 		09429CCC1AD3827D001513DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C84A841C271E1D002CF5B7 /* tp.muparser.ios.Debug.xcconfig */;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		09429CCD1AD3827D001513DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C84A851C271E1D002CF5B7 /* tp.muparser.ios.Release.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		097662871AD3563B0099DA54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C84A801C271E1D002CF5B7 /* Project.Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		097662881AD3563B0099DA54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C84A811C271E1D002CF5B7 /* Project.Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		0976628A1AD3563B0099DA54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C84A831C271E1D002CF5B7 /* tp.muparser.Debug.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		0976628B1AD3563B0099DA54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C84A871C271E1D002CF5B7 /* tp.muparser.Release.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
