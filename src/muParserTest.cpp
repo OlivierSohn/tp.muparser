@@ -1349,7 +1349,7 @@ namespace mu
           // Test copy constructor
           std::vector<mu::Parser> vParser;
           vParser.push_back(*(p1.get()));
-          mu::Parser p2 = vParser[0];   // take parser from vector
+          p2 = vParser[0];   // take parser from vector
         
           // destroy the originals from p2
           vParser.clear();              // delete the vector
@@ -1359,7 +1359,6 @@ namespace mu
 
           // Test assignement operator
           // additionally  disable Optimizer this time
-          mu::Parser p3;
           p3 = p2;
           p3.EnableOptimizer(false);
           fVal[3] = p3.Eval();
