@@ -56,7 +56,7 @@
 
 /* Begin PBXFileReference section */
 		09429CBA1AD3827D001513DA /* libtp.muparser.ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtp.muparser.ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		097662851AD3563B0099DA54 /* libtp.muparser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtp.muparser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		097662851AD3563B0099DA54 /* libtp.muparser.osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtp.muparser.osx.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		097662CD1AD358BD0099DA54 /* muParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParser.h; sourceTree = "<group>"; };
 		097662CE1AD358BD0099DA54 /* muParserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserBase.h; sourceTree = "<group>"; };
 		097662CF1AD358BD0099DA54 /* muParserBytecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = muParserBytecode.h; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		097662861AD3563B0099DA54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				097662851AD3563B0099DA54 /* libtp.muparser.a */,
+				097662851AD3563B0099DA54 /* libtp.muparser.osx.a */,
 				09429CBA1AD3827D001513DA /* libtp.muparser.ios.a */,
 			);
 			name = Products;
@@ -228,9 +228,9 @@
 			productReference = 09429CBA1AD3827D001513DA /* libtp.muparser.ios.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		097662841AD3563B0099DA54 /* tp.muparser */ = {
+		097662841AD3563B0099DA54 /* tp.muparser.osx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 097662891AD3563B0099DA54 /* Build configuration list for PBXNativeTarget "tp.muparser" */;
+			buildConfigurationList = 097662891AD3563B0099DA54 /* Build configuration list for PBXNativeTarget "tp.muparser.osx" */;
 			buildPhases = (
 				097662811AD3563B0099DA54 /* Sources */,
 				097662821AD3563B0099DA54 /* Frameworks */,
@@ -240,9 +240,9 @@
 			);
 			dependencies = (
 			);
-			name = tp.muparser;
+			name = tp.muparser.osx;
 			productName = tp.muparser;
-			productReference = 097662851AD3563B0099DA54 /* libtp.muparser.a */;
+			productReference = 097662851AD3563B0099DA54 /* libtp.muparser.osx.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +274,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				097662841AD3563B0099DA54 /* tp.muparser */,
+				097662841AD3563B0099DA54 /* tp.muparser.osx */,
 				09429CB91AD3827D001513DA /* tp.muparser.ios */,
 			);
 		};
@@ -379,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		097662891AD3563B0099DA54 /* Build configuration list for PBXNativeTarget "tp.muparser" */ = {
+		097662891AD3563B0099DA54 /* Build configuration list for PBXNativeTarget "tp.muparser.osx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0976628A1AD3563B0099DA54 /* Debug */,
