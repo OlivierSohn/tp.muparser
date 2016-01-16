@@ -267,7 +267,7 @@ namespace mu
   // Data container types
 
   /** \brief Type used for storing variables. */
-  typedef std::map<string_type, value_type*> varmap_type;
+  typedef std::map<string_type, value_type const *> varmap_type;
   
   /** \brief Type used for storing constants. */
   typedef std::map<string_type, value_type> valmap_type;
@@ -374,7 +374,7 @@ namespace mu
   typedef int (*identfun_type)(const char_type *sExpr, int *nPos, value_type *fVal);
 
   /** \brief Callback used for variable creation factory functions. */
-  typedef value_type* (*facfun_type)(const char_type*, void*);
+  typedef value_type const * (*facfun_type)(const char_type*, void*);
 } // end of namespace
 
 #endif

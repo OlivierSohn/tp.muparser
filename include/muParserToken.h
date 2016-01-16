@@ -64,7 +64,7 @@ namespace mu
 
       ECmdCode  m_iCode;  ///< Type of the token; The token type is a constant of type #ECmdCode.
       ETypeCode m_iType;
-      void  *m_pTok;      ///< Stores Token pointer; not applicable for all tokens
+      void const *m_pTok;      ///< Stores Token pointer; not applicable for all tokens
       int  m_iIdx;        ///< An otional index to an external buffer storing the token data
       TString m_strTok;   ///< Token string
       TString m_strVal;   ///< Value for string variables
@@ -205,13 +205,13 @@ namespace mu
           Member variables not necessary for variable tokens will be invalidated.
           \throw nothrow
       */
-      ParserToken& SetVar(TBase *a_pVar, const TString &a_strTok)
+      ParserToken& SetVar(TBase const *a_pVar, const TString &a_strTok)
       {
         m_iCode = cmVAR;
         m_iType = tpDBL;
         m_strTok = a_strTok;
         m_iIdx = -1;
-        m_pTok = (void*)a_pVar;
+        m_pTok = (void const*)a_pVar;
         m_pCallback.reset(0);
         return *this;
       }
@@ -352,7 +352,7 @@ namespace mu
         switch (m_iCode)
         {
           case cmVAL:  return m_fVal;
-          case cmVAR:  return *((TBase*)m_pTok);
+          case cmVAR:  return *((TBase const *)m_pTok);
           default:     throw ParserError(ecVAL_EXPECTED);
         }
       }
