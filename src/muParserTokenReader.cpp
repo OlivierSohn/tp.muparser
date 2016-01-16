@@ -875,7 +875,7 @@ namespace mu
     // If a factory is available implicitely create new variables
     if (m_pFactory)
     {
-      value_type *fVar = m_pFactory(strTok.c_str(), m_pFactoryData);
+      auto fVar = m_pFactory(strTok.c_str(), m_pFactoryData);
       a_Tok.SetVar(fVar, strTok );
 
       // Do not use m_pParser->DefineVar( strTok, fVar );
@@ -972,9 +972,9 @@ namespace mu
     return m_cArgSep;
   }
 
-  void ParserTokenReader::Error(const char * token) const
+  void ParserTokenReader::Error( EErrorCodes err, const char * token ) const
   {
-      Error(ecUNASSIGNABLE_TOKEN, m_iPos, token);
+      Error(err, m_iPos, token);
   }
     
   const string_type & ParserTokenReader::GetLastToken(int & iLastPos) const

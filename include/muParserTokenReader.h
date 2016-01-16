@@ -77,7 +77,7 @@ namespace mu
       token_type ReadNextToken();
 
       // I added that to throw a well documented exception from var factory
-      void Error(const char * token) const;
+      void Error(EErrorCodes err, const char * token) const;
 
       // I added that to know what function name was before an "unexpected parenthesis" error
       const string_type & GetLastToken(int & iLastPos) const;
