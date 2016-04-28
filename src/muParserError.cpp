@@ -81,7 +81,7 @@ namespace mu
     m_vErrMsg[ecUNEXPECTED_VAL]         = _T("$POS$:Unexpected value \"$TOK$\"");
     m_vErrMsg[ecUNEXPECTED_VAR]         = _T("$POS$:Unexpected variable \"$TOK$\"");
     m_vErrMsg[ecUNEXPECTED_ARG]         = _T("$POS$:Function arguments used without a function");
-    m_vErrMsg[ecMISSING_PARENS]         = _T("Missing parenthesis");
+    m_vErrMsg[ecMISSING_PARENS]         = _T("$POS$:Missing parenthesis in \"$TOK$\"");
     m_vErrMsg[ecTOO_MANY_PARAMS]        = _T("$POS$:Too many parameters for \"$TOK$\"");
     m_vErrMsg[ecTOO_FEW_PARAMS]         = _T("$POS$:Too few parameters for \"$TOK$\"");
     m_vErrMsg[ecDIV_BY_ZERO]            = _T("Divide by zero");
