@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09429CD11AD38299001513DA /* muParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DD1AD358BD0099DA54 /* muParser.cpp */; };
-		09429CD21AD38299001513DA /* muParserBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DE1AD358BD0099DA54 /* muParserBase.cpp */; };
-		09429CD31AD38299001513DA /* muParserBytecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */; };
-		09429CD41AD38299001513DA /* muParserCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E01AD358BD0099DA54 /* muParserCallback.cpp */; };
-		09429CD51AD38299001513DA /* muParserDLL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E11AD358BD0099DA54 /* muParserDLL.cpp */; };
-		09429CD61AD38299001513DA /* muParserError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E21AD358BD0099DA54 /* muParserError.cpp */; };
-		09429CD71AD38299001513DA /* muParserInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E31AD358BD0099DA54 /* muParserInt.cpp */; };
-		09429CD81AD38299001513DA /* muParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E41AD358BD0099DA54 /* muParserTest.cpp */; };
-		09429CD91AD38299001513DA /* muParserTokenReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */; };
 		097662EA1AD358BD0099DA54 /* muParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662CD1AD358BD0099DA54 /* muParser.h */; };
 		097662EB1AD358BD0099DA54 /* muParserBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662CE1AD358BD0099DA54 /* muParserBase.h */; };
 		097662EC1AD358BD0099DA54 /* muParserBytecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662CF1AD358BD0099DA54 /* muParserBytecode.h */; };
@@ -31,15 +22,8 @@
 		097662F61AD358BD0099DA54 /* muParserToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662D91AD358BD0099DA54 /* muParserToken.h */; };
 		097662F71AD358BD0099DA54 /* muParserTokenReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662DA1AD358BD0099DA54 /* muParserTokenReader.h */; };
 		097662F81AD358BD0099DA54 /* tp.muparser.allincludes.h in Headers */ = {isa = PBXBuildFile; fileRef = 097662DB1AD358BD0099DA54 /* tp.muparser.allincludes.h */; };
-		097662F91AD358BD0099DA54 /* muParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DD1AD358BD0099DA54 /* muParser.cpp */; };
-		097662FA1AD358BD0099DA54 /* muParserBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DE1AD358BD0099DA54 /* muParserBase.cpp */; };
-		097662FB1AD358BD0099DA54 /* muParserBytecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */; };
-		097662FC1AD358BD0099DA54 /* muParserCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E01AD358BD0099DA54 /* muParserCallback.cpp */; };
-		097662FD1AD358BD0099DA54 /* muParserDLL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E11AD358BD0099DA54 /* muParserDLL.cpp */; };
-		097662FE1AD358BD0099DA54 /* muParserError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E21AD358BD0099DA54 /* muParserError.cpp */; };
-		097662FF1AD358BD0099DA54 /* muParserInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E31AD358BD0099DA54 /* muParserInt.cpp */; };
-		097663001AD358BD0099DA54 /* muParserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E41AD358BD0099DA54 /* muParserTest.cpp */; };
-		097663011AD358BD0099DA54 /* muParserTokenReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 097662E51AD358BD0099DA54 /* muParserTokenReader.cpp */; };
+		09D5972C1D90774300844280 /* unity.build.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09D5972B1D90774300844280 /* unity.build.cpp */; };
+		09D5972D1D90774300844280 /* unity.build.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09D5972B1D90774300844280 /* unity.build.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +74,7 @@
 		09C84A861C271E1D002CF5B7 /* ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ios.xcconfig; sourceTree = "<group>"; };
 		09C84A871C271E1D002CF5B7 /* osx.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = osx.release.xcconfig; sourceTree = "<group>"; };
 		09C84A881C271E1D002CF5B7 /* osx.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = osx.xcconfig; sourceTree = "<group>"; };
+		09D5972B1D90774300844280 /* unity.build.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unity.build.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +139,7 @@
 		097662DC1AD358BD0099DA54 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				09D5972B1D90774300844280 /* unity.build.cpp */,
 				097662DD1AD358BD0099DA54 /* muParser.cpp */,
 				097662DE1AD358BD0099DA54 /* muParserBase.cpp */,
 				097662DF1AD358BD0099DA54 /* muParserBytecode.cpp */,
@@ -285,15 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09429CD11AD38299001513DA /* muParser.cpp in Sources */,
-				09429CD21AD38299001513DA /* muParserBase.cpp in Sources */,
-				09429CD31AD38299001513DA /* muParserBytecode.cpp in Sources */,
-				09429CD41AD38299001513DA /* muParserCallback.cpp in Sources */,
-				09429CD51AD38299001513DA /* muParserDLL.cpp in Sources */,
-				09429CD61AD38299001513DA /* muParserError.cpp in Sources */,
-				09429CD71AD38299001513DA /* muParserInt.cpp in Sources */,
-				09429CD81AD38299001513DA /* muParserTest.cpp in Sources */,
-				09429CD91AD38299001513DA /* muParserTokenReader.cpp in Sources */,
+				09D5972D1D90774300844280 /* unity.build.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,15 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097663001AD358BD0099DA54 /* muParserTest.cpp in Sources */,
-				097662F91AD358BD0099DA54 /* muParser.cpp in Sources */,
-				097662FC1AD358BD0099DA54 /* muParserCallback.cpp in Sources */,
-				097662FA1AD358BD0099DA54 /* muParserBase.cpp in Sources */,
-				097662FF1AD358BD0099DA54 /* muParserInt.cpp in Sources */,
-				097662FB1AD358BD0099DA54 /* muParserBytecode.cpp in Sources */,
-				097662FD1AD358BD0099DA54 /* muParserDLL.cpp in Sources */,
-				097662FE1AD358BD0099DA54 /* muParserError.cpp in Sources */,
-				097663011AD358BD0099DA54 /* muParserTokenReader.cpp in Sources */,
+				09D5972C1D90774300844280 /* unity.build.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
