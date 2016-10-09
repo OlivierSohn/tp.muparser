@@ -150,7 +150,7 @@ namespace mu
   */
   ParserTokenReader* ParserTokenReader::Clone(ParserBase *a_pParent) const
   {
-    std::auto_ptr<ParserTokenReader> ptr(new ParserTokenReader(*this));
+    auto ptr = std::make_unique<ParserTokenReader>(*this);
     ptr->SetParent(a_pParent);
     return ptr.release();
   }

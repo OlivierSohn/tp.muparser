@@ -53,10 +53,10 @@ namespace mu
   */
   class ParserTokenReader 
   {
+      friend std::unique_ptr<ParserTokenReader> std::make_unique<ParserTokenReader>(ParserTokenReader const &);
   private:
 
       typedef ParserToken<value_type, string_type> token_type;
-
   public:
 
       ParserTokenReader(ParserBase *a_pParent);

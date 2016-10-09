@@ -1258,14 +1258,14 @@ namespace mu
 
       try
       {
-        std::auto_ptr<Parser> p1;
+        auto p1 = std::make_unique<mu::Parser>();
+          
         Parser  p2, p3;   // three parser objects
                           // they will be used for testing copy and assihnment operators
         // p1 is a pointer since i'm going to delete it in order to test if
         // parsers after copy construction still refer to members of it.
         // !! If this is the case this function will crash !!
       
-        p1.reset(new mu::Parser()); 
         // Add constants
         p1->DefineConst( _T("pi"), (value_type)PARSER_CONST_PI);
         p1->DefineConst( _T("e"), (value_type)PARSER_CONST_E);
