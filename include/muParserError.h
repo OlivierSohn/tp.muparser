@@ -114,7 +114,7 @@ public:
     ParserErrorMsg(const ParserErrorMsg&);
     ParserErrorMsg();
 
-   ~ParserErrorMsg();
+    ~ParserErrorMsg() {}
 
     static const ParserErrorMsg& Instance();
     string_type operator[](unsigned a_iIdx) const;
@@ -157,7 +157,7 @@ public:
                  const string_type &sTok = string_type());
     ParserError(const ParserError &a_Obj);
     ParserError& operator=(const ParserError &a_Obj);
-   ~ParserError();
+    ~ParserError() {}
 
     void SetFormula(const string_type &a_strFormula);
     const string_type& GetExpr() const;

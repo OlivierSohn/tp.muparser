@@ -126,10 +126,6 @@ namespace mu
   }
 
   //---------------------------------------------------------------------------
-  ParserBase::~ParserBase()
-  {}
-
-  //---------------------------------------------------------------------------
   /** \brief Assignement operator. 
 
     Implemented by calling Assign(a_Parser). Self assignement is suppressed.

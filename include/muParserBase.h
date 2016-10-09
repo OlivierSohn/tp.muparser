@@ -104,7 +104,7 @@ private:
     ParserBase(const ParserBase &a_Parser);
     ParserBase& operator=(const ParserBase &a_Parser);
 
-    virtual ~ParserBase();
+    virtual ~ParserBase() {}
     
 	  value_type  Eval() const;
     value_type* Eval(int &nStackSize) const;

@@ -42,10 +42,6 @@ namespace mu
   }
 
   //---------------------------------------------------------------------------
-  ParserErrorMsg::~ParserErrorMsg()
-  {}
-
-  //---------------------------------------------------------------------------
   /** \brief Assignement operator is deactivated.
   */
   ParserErrorMsg& ParserErrorMsg::operator=(const ParserErrorMsg& )
@@ -255,10 +251,6 @@ namespace mu
     m_iErrc = a_Obj.m_iErrc;
     return *this;
   }
-
-  //------------------------------------------------------------------------------
-  ParserError::~ParserError()
-  {}
 
   //------------------------------------------------------------------------------
   /** \brief Replace all ocuurences of a substring with another string. 
