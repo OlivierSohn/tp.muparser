@@ -363,12 +363,15 @@ namespace mu
 
   /** \brief Callback type used for functions taking a string as an argument. */
   typedef value_type (*strfun_type1)(const char_type*);
+    typedef std::function<value_type(const char_type*)> * cppstrfun_type1;
 
   /** \brief Callback type used for functions taking a string and a value as arguments. */
   typedef value_type (*strfun_type2)(const char_type*, value_type);
+    typedef std::function<value_type(const char_type*, value_type)> * cppstrfun_type2;
 
   /** \brief Callback type used for functions taking a string and two values as arguments. */
   typedef value_type (*strfun_type3)(const char_type*, value_type, value_type);
+    typedef std::function<value_type(const char_type*, value_type, value_type)> * cppstrfun_type3;
 
   /** \brief Callback used for functions that identify values in a string. */
   typedef int (*identfun_type)(const char_type *sExpr, int *nPos, value_type *fVal);

@@ -771,8 +771,7 @@ namespace mu
       Error(ecSTRING_EXPECTED, m_pTokenReader->GetPos(), a_FunTok.GetAsString());
 
     token_type  valTok;
-    generic_fun_type pFunc = a_FunTok.GetFuncAddr();
-    assert(pFunc);
+      assert(a_FunTok.GetFuncAddr() || a_FunTok.GetCppFuncAddr());
 
     try
     {
@@ -791,7 +790,11 @@ namespace mu
     }
 
     // string functions won't be optimized
-    m_vRPN.AddStrFun(pFunc, a_FunTok.GetArgCount(), a_vArg.back().GetIdx());
+      if (a_FunTok.GetFuncAddr())
+          m_vRPN.AddStrFun(a_FunTok.GetFuncAddr(), a_FunTok.GetArgCount(), a_vArg.back().GetIdx());
+      else
+          m_vRPN.AddStrMet(a_FunTok.GetCppFuncAddr(), a_FunTok.GetArgCount(), a_vArg.back().GetIdx());
+      
     
     // Push dummy value representing the function result to the stack
     return valTok;
@@ -1113,7 +1116,8 @@ namespace mu
             {
               int iArgCount = pTok->Fun.argc;
                 generic_fun_type cFunc = pTok->Fun.ptr;
-                
+                generic_cppfun_type cppMet = pTok->Fun.cppptr;
+
               // switch according to argument count
               switch(iArgCount)  
                 {
@@ -1121,68 +1125,68 @@ namespace mu
                         if (cFunc)
                             Stack[sidx] = (*(fun_type0)cFunc)();
                         else
-                            Stack[sidx] = (*(cppfun_type0)pTok->Fun.cppptr)();
+                            Stack[sidx] = (*(cppfun_type0)cppMet)();
                         continue;
                     case 1:
                         if (cFunc)
                             Stack[sidx] = (*(fun_type1)cFunc)(Stack[sidx]);
                         else
-                            Stack[sidx] = (*(cppfun_type1)pTok->Fun.cppptr)(Stack[sidx]);
+                            Stack[sidx] = (*(cppfun_type1)cppMet)(Stack[sidx]);
                         continue;
                         
                     case 2: sidx -= 1;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type2)cFunc)(Stack[sidx], Stack[sidx+1]);
                         else
-                            Stack[sidx] = (*(cppfun_type2)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1]);
+                            Stack[sidx] = (*(cppfun_type2)cppMet)(Stack[sidx], Stack[sidx+1]);
                         continue;
                     case 3: sidx -= 2;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type3)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]);
                         else
-                            Stack[sidx] = (*(cppfun_type3)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]);
+                            Stack[sidx] = (*(cppfun_type3)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2]);
                         continue;
                     case 4: sidx -= 3;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type4)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]);
                         else
-                            Stack[sidx] = (*(cppfun_type4)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]);
+                            Stack[sidx] = (*(cppfun_type4)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]);
                         continue;
                     case 5: sidx -= 4;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type5)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]);
                         else
-                            Stack[sidx] = (*(cppfun_type5)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]);
+                            Stack[sidx] = (*(cppfun_type5)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]);
                         continue;
                     case 6: sidx -= 5;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type6)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
                         else
-                            Stack[sidx] = (*(cppfun_type6)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
+                            Stack[sidx] = (*(cppfun_type6)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
                         continue;
                     case 7: sidx -= 6;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type7)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
                         else
-                            Stack[sidx] = (*(cppfun_type7)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
+                            Stack[sidx] = (*(cppfun_type7)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
                         continue;
                     case 8: sidx -= 7;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type8)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]);
                         else
-                            Stack[sidx] = (*(cppfun_type8)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]);
+                            Stack[sidx] = (*(cppfun_type8)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]);
                         continue;
                     case 9: sidx -= 8;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type9)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]);
                         else
-                            Stack[sidx] = (*(cppfun_type9)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]);
+                            Stack[sidx] = (*(cppfun_type9)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]);
                         continue;
                     case 10:sidx -= 9;
                         if (cFunc)
                             Stack[sidx] = (*(fun_type10)cFunc)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]);
                         else
-                            Stack[sidx] = (*(cppfun_type10)pTok->Fun.cppptr)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]);
+                            Stack[sidx] = (*(cppfun_type10)cppMet)(Stack[sidx], Stack[sidx+1], Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]);
                         continue;
                     default:
                 if (iArgCount>0) // function with variable arguments store the number as a negative value
@@ -1202,12 +1206,30 @@ namespace mu
               // The index of the string argument in the string table
               int iIdxStack = pTok->Fun.idx;  
               MUP_ASSERT( iIdxStack>=0 && iIdxStack<(int)m_vStringBuf.size() );
-
+                generic_fun_type cFunc = pTok->Fun.ptr;
+                generic_cppfun_type cppMet = pTok->Fun.cppptr;
+                auto str = m_vStringBuf[iIdxStack].c_str();
+                
               switch(pTok->Fun.argc)  // switch according to argument count
-              {
-              case 0: Stack[sidx] = (*(strfun_type1)pTok->Fun.ptr)(m_vStringBuf[iIdxStack].c_str()); continue;
-              case 1: Stack[sidx] = (*(strfun_type2)pTok->Fun.ptr)(m_vStringBuf[iIdxStack].c_str(), Stack[sidx]); continue;
-              case 2: Stack[sidx] = (*(strfun_type3)pTok->Fun.ptr)(m_vStringBuf[iIdxStack].c_str(), Stack[sidx], Stack[sidx+1]); continue;
+                {
+                    case 0:
+                        if(cFunc)
+                            Stack[sidx] = (*(strfun_type1)cFunc)(str);
+                        else
+                            Stack[sidx] = (*(cppstrfun_type1)cppMet)(str);
+                        continue;
+                    case 1:
+                        if(cFunc)
+                            Stack[sidx] = (*(strfun_type2)cFunc)(str, Stack[sidx]);
+                        else
+                            Stack[sidx] = (*(cppstrfun_type2)cppMet)(str, Stack[sidx]);
+                        continue;
+                    case 2:
+                        if(cFunc)
+                            Stack[sidx] = (*(strfun_type3)cFunc)(str, Stack[sidx], Stack[sidx+1]);
+                        else
+                            Stack[sidx] = (*(cppstrfun_type3)cppMet)(str, Stack[sidx], Stack[sidx+1]);
+                        continue;
               }
 
               continue;

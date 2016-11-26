@@ -468,6 +468,16 @@ namespace mu
     ,m_iType(tpSTR)
     ,m_bAllowOpti(a_bAllowOpti)
   {}
+    ParserCallback::ParserCallback(cppstrfun_type1 a_pFun, bool a_bAllowOpti)
+    :m_pCppFun((void*)a_pFun)
+    ,m_pFun(NULL)
+    ,m_iArgc(0)
+    ,m_iPri(-1)
+    ,m_eOprtAsct(oaNONE)
+    ,m_iCode(cmFUNC_STR)
+    ,m_iType(tpSTR)
+    ,m_bAllowOpti(a_bAllowOpti)
+    {}
 
 
   //---------------------------------------------------------------------------
@@ -481,6 +491,17 @@ namespace mu
     ,m_iType(tpSTR)
     ,m_bAllowOpti(a_bAllowOpti)
   {}
+    ParserCallback::ParserCallback(cppstrfun_type2 a_pFun, bool a_bAllowOpti)
+    :m_pCppFun((void*)a_pFun)
+    ,m_pFun(NULL)
+    ,m_iArgc(1)
+    ,m_iPri(-1)
+    ,m_eOprtAsct(oaNONE)
+    ,m_iCode(cmFUNC_STR)
+    ,m_iType(tpSTR)
+    ,m_bAllowOpti(a_bAllowOpti)
+    {}
+    
 
 
   //---------------------------------------------------------------------------
@@ -494,6 +515,17 @@ namespace mu
     ,m_iType(tpSTR)
     ,m_bAllowOpti(a_bAllowOpti)
   {}
+    ParserCallback::ParserCallback(cppstrfun_type3 a_pFun, bool a_bAllowOpti)
+    :m_pCppFun((void*)a_pFun)
+    ,m_pFun(NULL)
+    ,m_iArgc(2)
+    ,m_iPri(-1)
+    ,m_eOprtAsct(oaNONE)
+    ,m_iCode(cmFUNC_STR)
+    ,m_iType(tpSTR)
+    ,m_bAllowOpti(a_bAllowOpti)
+    {}
+    
 
 
   //---------------------------------------------------------------------------
@@ -555,14 +587,6 @@ namespace mu
       \throw nothrow
       \return #pFun
   */
-  void* ParserCallback::GetAddr() const
-  {
-      return m_pFun;
-  }
-  generic_cppfun_type ParserCallback::GetCppAddr() const
-  {
-      return m_pCppFun;
-  }
 
   //---------------------------------------------------------------------------
   /** \brief Return the callback code. */

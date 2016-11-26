@@ -126,6 +126,7 @@ public:
     void AddFun(generic_fun_type a_pFun, int a_iArgc);
     void AddBulkFun(generic_fun_type a_pFun, int a_iArgc);
     void AddStrFun(generic_fun_type a_pFun, int a_iArgc, int a_iIdx);
+    void AddStrMet(generic_cppfun_type a_pCppFun, int a_iArgc, int a_iIdx);
 
     void EnableOptimizer(bool bStat);
 

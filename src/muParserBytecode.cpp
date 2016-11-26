@@ -432,10 +432,25 @@ namespace mu
     tok.Fun.argc = a_iArgc;
     tok.Fun.idx = a_iIdx;
     tok.Fun.ptr = a_pFun;
+      tok.Fun.cppptr = nullptr;
     m_vRPN.push_back(tok);
 
     m_iMaxStackSize = std::max(m_iMaxStackSize, (size_t)m_iStackPos);
   }
+    void ParserByteCode::AddStrMet(generic_cppfun_type a_pCppFun, int a_iArgc, int a_iIdx)
+    {
+        m_iStackPos = m_iStackPos - a_iArgc + 1;
+        
+        SToken tok;
+        tok.Cmd = cmFUNC_STR;
+        tok.Fun.argc = a_iArgc;
+        tok.Fun.idx = a_iIdx;
+        tok.Fun.ptr = NULL;
+        tok.Fun.cppptr = a_pCppFun;
+        m_vRPN.push_back(tok);
+        
+        m_iMaxStackSize = std::max(m_iMaxStackSize, (size_t)m_iStackPos);
+    }
 
   //---------------------------------------------------------------------------
   /** \brief Add end marker to bytecode.

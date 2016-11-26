@@ -92,14 +92,19 @@ public:
     ParserCallback(strfun_type1 a_pFun, bool a_bAllowOpti);
     ParserCallback(strfun_type2 a_pFun, bool a_bAllowOpti);
     ParserCallback(strfun_type3 a_pFun, bool a_bAllowOpti);
+    
+    ParserCallback(cppstrfun_type1 a_pFun, bool a_bAllowOpti);
+    ParserCallback(cppstrfun_type2 a_pFun, bool a_bAllowOpti);
+    ParserCallback(cppstrfun_type3 a_pFun, bool a_bAllowOpti);
+
     ParserCallback();
     ParserCallback(const ParserCallback &a_Fun);
     
     ParserCallback* Clone() const;
 
     bool  IsOptimizable() const;
-    void* GetAddr() const;
-    generic_cppfun_type GetCppAddr() const;
+    void* GetAddr() const { return m_pFun; }
+    generic_cppfun_type GetCppAddr() const { return m_pCppFun; }
     ECmdCode  GetCode() const;
     ETypeCode GetType() const;
     int GetPri()  const;

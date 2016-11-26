@@ -96,6 +96,7 @@ enum EErrorCodes
   ecMISSING_FUNCTIONCALL = 37,///< the resolve process found an animation with token as session name, but the parser could not interpret it as a function call in the expression because () are missing
   ecFORBIDDEN_VAR = 38,
   ecRECURSIVITY = 39,
+  ecCALL_FAILED = 40, // a user function fails
 
   // The last two are special entries 
   ecCOUNT,                      ///< This is no error code, It just stores just the total number of error codes
@@ -134,7 +135,7 @@ class ParserError
 {
 private:
 
-    /** \brief Replace all ocuurences of a substring with another string. */
+    /** \brief Replace all occurences of a substring with another string. */
     void ReplaceSubString( string_type &strSource, 
                            const string_type &strFind,
                            const string_type &strReplaceWith);
