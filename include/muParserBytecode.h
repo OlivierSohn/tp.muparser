@@ -106,7 +106,7 @@ private:
     /** \brief The actual rpn storage. */
     rpn_type  m_vRPN;
 
-    bool m_bEnableOptimizer;
+    bool m_bEnableOptimizer : 1;
 
     void ConstantFolding(ECmdCode a_Oprt);
 

@@ -302,7 +302,7 @@ private:
     strmap_type  m_StrVarDef;      ///< user defined string constants
     varmap_type  m_VarDef;         ///< user defind variables.
 
-    bool m_bBuiltInOp;             ///< Flag that can be used for switching built in operators on and off
+    bool m_bBuiltInOp : 1;             ///< Flag that can be used for switching built in operators on and off
 
     string_type m_sNameChars;      ///< Charset for names
     string_type m_sOprtChars;      ///< Charset for postfix/ binary operator tokens

@@ -141,7 +141,7 @@ namespace mu
       string_type m_strFormula;
       int  m_iPos;
       int  m_iSynFlags;
-      bool m_bIgnoreUndefVar;
+      bool m_bIgnoreUndefVar : 1;
 
       const funmap_type *m_pFunDef;
       const funmap_type *m_pPostOprtDef;

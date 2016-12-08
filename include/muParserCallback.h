@@ -124,7 +124,7 @@ private:
     EOprtAssociativity m_eOprtAsct; ///< Operator associativity; Valid only for binary operators 
     ECmdCode  m_iCode;
     ETypeCode m_iType;
-    bool  m_bAllowOpti;             ///< Flag indication optimizeability 
+    bool  m_bAllowOpti : 1;             ///< Flag indication optimizeability
 };
 
 //------------------------------------------------------------------------------
