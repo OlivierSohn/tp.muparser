@@ -43,7 +43,7 @@ namespace mu
 {
 
 /** \brief Error codes. */
-enum EErrorCodes
+    enum EErrorCodes : unsigned char
 {
   // Formula syntax errors
   ecUNEXPECTED_OPERATOR    = 0,  ///< Unexpected binary operator found
@@ -100,7 +100,7 @@ enum EErrorCodes
 
   // The last two are special entries 
   ecCOUNT,                      ///< This is no error code, It just stores just the total number of error codes
-  ecUNDEFINED              = -1  ///< Undefined message, placeholder to detect unassigned error messages
+  ecUNDEFINED               ///< Undefined message, placeholder to detect unassigned error messages
 };
 
 //---------------------------------------------------------------------------
@@ -172,7 +172,7 @@ private:
     string_type m_strMsg;     ///< The message string
     string_type m_strFormula; ///< Formula string
     string_type m_strTok;     ///< Token related with the error
-    int m_iPos;               ///< Formula position related to the error 
+    int16_t m_iPos;               ///< Formula position related to the error
     EErrorCodes m_iErrc;      ///< Error code
     const ParserErrorMsg &m_ErrMsg;
 };		
