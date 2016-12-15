@@ -600,11 +600,11 @@ namespace mu
       case cmPOW:   mu::console() << _T("POW\n"); break;
 
       case cmIF:    mu::console() << _T("IF\t");
-                    mu::console() << _T("[OFFSET:") << std::dec << m_vRPN[i].Oprt.offset << _T("]\n");
+                    mu::console() << _T("[Offset:") << std::dec << m_vRPN[i].Oprt.offset << _T("]\n");
                     break;
 
       case cmELSE:  mu::console() << _T("ELSE\t");
-                    mu::console() << _T("[OFFSET:") << std::dec << m_vRPN[i].Oprt.offset << _T("]\n");
+                    mu::console() << _T("[Offset:") << std::dec << m_vRPN[i].Oprt.offset << _T("]\n");
                     break;
 
       case cmENDIF: mu::console() << _T("ENDIF\n"); break;
