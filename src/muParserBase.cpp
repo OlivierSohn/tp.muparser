@@ -354,15 +354,7 @@ namespace mu
 
     CheckOprt(a_strName, a_Callback, a_szCharSet);
       
-      string_type strLowerCaseName,strUpperCaseName;
-      strUpperCaseName.resize(a_strName.size());
-      strLowerCaseName.resize(a_strName.size());
-      
-      std::transform(a_strName.begin(), a_strName.end(), strUpperCaseName.begin(), ::toupper);
-      std::transform(a_strName.begin(), a_strName.end(), strLowerCaseName.begin(), ::tolower);
-      a_Storage[strLowerCaseName] = a_Callback;
-      if(strLowerCaseName != strUpperCaseName)
-          a_Storage[strUpperCaseName] = a_Callback;
+          a_Storage[a_strName] = a_Callback;
       
     ReInit();
   }
@@ -626,11 +618,7 @@ namespace mu
       strUpperCaseName.resize(a_sName.size());
       strLowerCaseName.resize(a_sName.size());
       
-      std::transform(a_sName.begin(), a_sName.end(), strUpperCaseName.begin(), ::toupper);
-      std::transform(a_sName.begin(), a_sName.end(), strLowerCaseName.begin(), ::tolower);
-      m_ConstDef[strLowerCaseName] = a_fVal;
-      if(strLowerCaseName != strUpperCaseName)
-          m_ConstDef[strUpperCaseName] = a_fVal;
+        m_ConstDef[a_sName] = a_fVal;
 
     ReInit();
   }
