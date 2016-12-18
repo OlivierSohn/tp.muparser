@@ -23,22 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#include "muParserBase.h"
-#include "muParserTemplateMagic.h"
-
-//--- Standard includes ------------------------------------------------------------------------
-#include <cassert>
-#include <algorithm>
-#include <cmath>
-#include <memory>
-#include <vector>
-#include <deque>
-#include <sstream>
-#include <locale>
-
-#ifdef MUP_USE_OPENMP
-  #include <omp.h>
-#endif
 
 using namespace std;
 

@@ -22,16 +22,6 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
-#ifndef MUP_DEF_H
-#define MUP_DEF_H
-
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <map>
-#include <functional>
-
-#include "muParserFixes.h"
 
 /** \file
     \brief This file contains standard definitions used by the parser.
@@ -379,6 +369,4 @@ namespace mu
   /** \brief Callback used for variable creation factory functions. */
   typedef value_type const * (*facfun_type)(const char_type*, void*);
 } // end of namespace
-
-#endif
 

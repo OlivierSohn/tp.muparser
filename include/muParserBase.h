@@ -22,24 +22,6 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
-#ifndef MU_PARSER_BASE_H
-#define MU_PARSER_BASE_H
-
-//--- Standard includes ------------------------------------------------------------------------
-#include <cmath>
-#include <string>
-#include <iostream>
-#include <map>
-#include <memory>
-#include <locale>
-#include <limits.h>
-
-//--- Parser includes --------------------------------------------------------------------------
-#include "muParserDef.h"
-#include "muParserStack.h"
-#include "muParserTokenReader.h"
-#include "muParserBytecode.h"
-#include "muParserError.h"
 
 
 namespace mu
@@ -317,5 +299,4 @@ private:
 
 } // namespace mu
 
-#endif
 

@@ -23,17 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_TOKEN_H
-#define MU_PARSER_TOKEN_H
-
-#include <cassert>
-#include <string>
-#include <stack>
-#include <vector>
-#include <memory>
-
-#include "muParserError.h"
-#include "muParserCallback.h"
 
 /** \file
     \brief This file contains the parser token definition.
@@ -402,4 +391,3 @@ namespace mu
   };
 } // namespace mu
 
-#endif

@@ -22,15 +22,6 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
-#ifndef MU_PARSER_H
-#define MU_PARSER_H
-
-//--- Standard includes ------------------------------------------------------------------------
-#include <vector>
-
-//--- Parser includes --------------------------------------------------------------------------
-#include "muParserBase.h"
-#include "muParserTemplateMagic.h"
 
 /** \file
     \brief Definition of the standard floating point parser.
@@ -110,6 +101,4 @@ namespace mu
     static int IsVal(const char_type* a_szExpr, int *a_iPos, value_type *a_fVal);
   };
 } // namespace mu
-
-#endif
 

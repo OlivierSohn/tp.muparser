@@ -1,3 +1,5 @@
+#include "private.h"
+
 #include "muParser.cpp"
 #include "muParserBase.cpp"
 #include "muParserBytecode.cpp"

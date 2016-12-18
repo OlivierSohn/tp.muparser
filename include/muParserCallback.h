@@ -23,12 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_CALLBACK_H
-#define MU_PARSER_CALLBACK_H
-
-#include "muParserDef.h"
-#include <functional>
-
 /** \file
     \brief Definition of the parser callback class.
 */
@@ -133,5 +127,4 @@ typedef std::map<string_type, ParserCallback> funmap_type;
 
 } // namespace mu
 
-#endif
 

@@ -23,12 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#include "muParserTest.h"
-
-#include <cstdio>
-#include <cmath>
-#include <iostream>
-#include <limits>
 
 #define PARSER_CONST_PI  3.141592653589793238462643
 #define PARSER_CONST_E   2.718281828459045235360287

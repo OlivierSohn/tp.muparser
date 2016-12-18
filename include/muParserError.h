@@ -23,18 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_ERROR_H
-#define MU_PARSER_ERROR_H
-
-#include <cassert>
-#include <stdexcept>
-#include <string>
-#include <sstream>
-#include <vector>
-#include <memory>
-
-#include "muParserDef.h"
-
 /** \file 
     \brief This file defines the error class used by the parser.
 */
@@ -178,6 +166,4 @@ private:
 };		
 
 } // namespace mu
-
-#endif
 

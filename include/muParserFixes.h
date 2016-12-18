@@ -23,9 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_FIXES_H
-#define MU_PARSER_FIXES_H
-
 /** \file
     \brief This file contains compatibility fixes for some platforms.
 */
@@ -56,7 +53,4 @@
 #pragma warning(disable:1572)
 
 #endif
-
-#endif // include guard
-
 

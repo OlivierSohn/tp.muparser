@@ -23,12 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#include "muParserInt.h"
-
-#include <cmath>
-#include <algorithm>
-#include <numeric>
-
 using namespace std;
 
 /** \file

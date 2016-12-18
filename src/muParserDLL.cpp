@@ -29,10 +29,6 @@
   #include <windows.h>
 #endif
 
-#include "muParserDLL.h"
-#include "muParser.h"
-#include "muParserInt.h"
-#include "muParserError.h"
 
 
 #define MU_TRY  \

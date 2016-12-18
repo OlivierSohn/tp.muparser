@@ -23,21 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_TOKEN_READER_H
-#define MU_PARSER_TOKEN_READER_H
-
-#include <cassert>
-#include <cstdio>
-#include <cstring>
-#include <list>
-#include <map>
-#include <memory>
-#include <stack>
-#include <string>
-
-#include "muParserDef.h"
-#include "muParserToken.h"
-
 /** \file
     \brief This file contains the parser token reader definition.
 */
@@ -161,7 +146,5 @@ namespace mu
       char_type m_cArgSep;     ///< The character used for separating function arguments
   };
 } // namespace mu
-
-#endif
 
 

@@ -23,14 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_TEST_H
-#define MU_PARSER_TEST_H
-
-#include <string>
-#include <cstdlib>
-#include <numeric> // for accumulate
-#include "muParser.h"
-#include "muParserInt.h"
 
 /** \file
     \brief This file contains the parser test class.
@@ -186,7 +178,4 @@ namespace mu
     };
   } // namespace Test
 } // namespace mu
-
-#endif
-
 

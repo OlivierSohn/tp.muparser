@@ -23,21 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#include "muParserBytecode.h"
-
-#include <algorithm>
-#include <cassert>
-#include <string>
-#include <stack>
-#include <vector>
-#include <iostream>
-
-#include "muParserDef.h"
-#include "muParserError.h"
-#include "muParserToken.h"
-#include "muParserStack.h"
-#include "muParserTemplateMagic.h"
-
 
 namespace mu
 {

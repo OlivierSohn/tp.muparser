@@ -23,17 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_STACK_H
-#define MU_PARSER_STACK_H
-
-#include <cassert>
-#include <string>
-#include <stack>
-#include <vector>
-
-#include "muParserError.h"
-#include "muParserToken.h"
-
 /** \file 
     \brief This file defines the stack used by muparser.
 */
@@ -122,4 +111,3 @@ namespace mu
   };
 } // namespace MathUtils
 
-#endif

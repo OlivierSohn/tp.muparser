@@ -22,9 +22,6 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
-#ifndef MU_PARSER_DLL_H
-#define MU_PARSER_DLL_H
-
 #if defined(WIN32) || defined(_WIN32)
     #ifdef MUPARSERLIB_EXPORTS
         #define API_EXPORT(TYPE) __declspec(dllexport) TYPE __cdecl
@@ -231,5 +228,3 @@ API_EXPORT(void) mupReleaseVar(muFloat_t*);
 #ifdef __cplusplus
 }
 #endif
-
-#endif // include guard

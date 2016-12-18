@@ -23,12 +23,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
 
-#ifndef MU_PARSER_INT_H
-#define MU_PARSER_INT_H
-
-#include "muParserBase.h"
-#include <vector>
-
 
 /** \file
     \brief Definition of a parser using integer value.
@@ -135,6 +129,4 @@ public:
 };
 
 } // namespace mu
-
-#endif
 
