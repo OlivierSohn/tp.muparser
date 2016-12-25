@@ -246,7 +246,7 @@ private:
                    int iArgCount) const; 
 
     token_type ApplyStrFunc(const token_type &a_FunTok,
-                            const std::vector<token_type> &a_vArg) const;
+                            const imajuscule::pool::vector<token_type> &a_vArg) const;
 
     int GetOprtPrecedence(const token_type &a_Tok) const;
     EOprtAssociativity GetOprtAssociativity(const token_type &a_Tok) const;

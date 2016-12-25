@@ -697,7 +697,7 @@ namespace mu
       return false;
 
     // iteraterate over all postfix operator strings
-    funmap_type::const_reverse_iterator it = m_pPostOprtDef->rbegin();
+    auto it = m_pPostOprtDef->rbegin();
     for ( ; it!=m_pPostOprtDef->rend(); ++it)
     {
       if (sTok.find(it->first)!=0)
@@ -736,7 +736,7 @@ namespace mu
     iEnd = ExtractToken(m_pParser->ValidNameChars(), strTok, m_iPos);
     if (iEnd!=m_iPos)
     {
-      valmap_type::const_iterator item = m_pConstDef->find(strTok);
+      auto item = m_pConstDef->find(strTok);
       if (item!=m_pConstDef->end())
       {
         m_iLastPos = m_iPos;
@@ -753,7 +753,7 @@ namespace mu
 
     // 3.call the value recognition functions provided by the user
     // Call user defined value recognition functions
-    std::vector<identfun_type>::const_iterator item = m_vIdentFun.begin();
+    auto item = m_vIdentFun.begin();
     for (item = m_vIdentFun.begin(); item!=m_vIdentFun.end(); ++item)
     {
       int iStart = m_iPos;

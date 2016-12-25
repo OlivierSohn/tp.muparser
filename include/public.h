@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+#include "../../algorithms/include/public.h"
+
 #include "muParserFixes.h"
 #include "muParserDef.h"
 
