@@ -39,7 +39,7 @@
         }                                                        \
         catch(muError_t &e)                                      \
         {                                                        \
-          ParserTag *pTag = static_cast<ParserTag*>(a_hParser);  \
+          auto *pTag = static_cast<ParserTag*>(a_hParser);  \
           pTag->exc = e;                                         \
           pTag->bError = true;                                   \
           if (pTag->errHandler)                                  \
@@ -47,7 +47,7 @@
         }                                                        \
         catch(...)                                               \
         {                                                        \
-          ParserTag *pTag = static_cast<ParserTag*>(a_hParser);  \
+          auto *pTag = static_cast<ParserTag*>(a_hParser);  \
           pTag->exc = muError_t(mu::ecINTERNAL_ERROR);           \
           pTag->bError = true;                                   \
           if (pTag->errHandler)                                  \
@@ -176,7 +176,7 @@ API_EXPORT(muParserHandle_t) mupCreate(int nBaseType)
 API_EXPORT(void) mupRelease(muParserHandle_t a_hParser)
 {
   MU_TRY
-    ParserTag* p = static_cast<ParserTag*>(a_hParser);
+    auto * p = static_cast<ParserTag*>(a_hParser);
     delete p;
   MU_CATCH
 }
