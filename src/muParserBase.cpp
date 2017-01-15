@@ -737,7 +737,7 @@ namespace mu
       \throw exception_type If the function token is not a string function
   */
   ParserBase::token_type ParserBase::ApplyStrFunc(const token_type &a_FunTok,
-                                                  const imajuscule::StaticVector<token_type> &a_vArg) const
+                                                  const imajuscule::StackVector<token_type> &a_vArg) const
   {
     if (a_vArg.back().GetCode()!=cmSTRING)
       Error(ecSTRING_EXPECTED, m_pTokenReader->GetPos(), a_FunTok.GetAsString());
@@ -819,7 +819,7 @@ namespace mu
 
     // Collect the numeric function arguments from the value stack and store them
     // in a vector
-    StaticVector<token_type> stArg(iArgNumerical + 1);
+    StackVector<token_type> stArg(iArgNumerical + 1);
     for (int i=0; i<iArgNumerical; ++i)
     {
       stArg.push_back( a_stVal.pop() );
