@@ -598,10 +598,6 @@ namespace mu
   {
     CheckName(a_sName, ValidNameChars());
       
-      string_type strLowerCaseName,strUpperCaseName;
-      strUpperCaseName.resize(a_sName.size());
-      strLowerCaseName.resize(a_sName.size());
-      
         m_ConstDef[a_sName] = a_fVal;
 
     ReInit();
