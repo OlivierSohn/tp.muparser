@@ -1,4 +1,4 @@
-#include "public.h"
+#include "../include/public.h"
 
 #include <deque>
 #include <limits>
